@@ -136,7 +136,7 @@ public class DlgConfigurarCuotaDiaria extends JDialog {
 			}
 			dispose();
 		} catch (NumberFormatException e1) {
-			Adicional.mensajeInformativo("Ingresar valores numÃ©ricos");
+			Adicional.mensajeInformativo("Ingresar valores numéricos");
 			txtCuotaDiariaEsperada.setText(String.valueOf(Adicional.df.format(FrmPrincipal.cuotaDiaria)));
 			return;
 		}

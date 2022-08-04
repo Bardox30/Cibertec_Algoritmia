@@ -126,17 +126,14 @@ public class DlgConsultarCocina extends JDialog implements ActionListener {
 		btnCerrar.addActionListener(this);
 		btnCerrar.setBounds(376, 20, 89, 23);
 		contentPanel.add(btnCerrar);
-		mostrar();
-	}
-	
-	private void mostrar() {
+		//mostrar los datos del modelo 0
 		txtPrecio.setText("" +FrmPrincipal.precio0);
 		txtAncho.setText("" +FrmPrincipal.ancho0);
 		txtAlto.setText("" +FrmPrincipal.alto0);
 		txtFondo.setText("" +FrmPrincipal.fondo0);
 		txtQuemadores.setText("" +FrmPrincipal.quemadores0);
+		
 	}
-	
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == cboModelo) {
 			actionPerformedComboBox(e);
