@@ -192,25 +192,25 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		default:
 			txtS.setText("PROMEDIOS, MENORES Y MAYORES\n\n");
 			
-			imprimir("Precio promedio	: S/. "+Adicional.df.format(clasificacionPromedialPrecios(0)));
-			imprimir("Precio menor		: S/. "+Adicional.df.format(clasificacionPromedialPrecios(1)));
-			imprimir("Precio mayor		: S/. "+Adicional.df.format(clasificacionPromedialPrecios(2))+"\n");
+			imprimir("Precio promedio	: S/. "+clasificacionPromedialPrecios(0));
+			imprimir("Precio menor		: S/. "+clasificacionPromedialPrecios(1));
+			imprimir("Precio mayor		: S/. "+clasificacionPromedialPrecios(2)+"\n");
 			
-			imprimir("Ancho promedio	: "+Adicional.df.format(clasificacionPromedialAnchos(0))+" cm");
-			imprimir("Ancho menor		: "+Adicional.df.format(clasificacionPromedialAnchos(1))+" cm");
-			imprimir("Ancho mayor		: "+Adicional.df.format(clasificacionPromedialAnchos(2))+" cm"+"\n");
+			imprimir("Ancho promedio	: "+clasificacionPromedialAnchos(0)+" cm");
+			imprimir("Ancho menor		: "+clasificacionPromedialAnchos(1)+" cm");
+			imprimir("Ancho mayor		: "+clasificacionPromedialAnchos(2)+" cm"+"\n");
 			
-			imprimir("Alto promedio		: "+Adicional.df.format(clasificacionPromedialAltos(0))+" cm");
-			imprimir("Alto menor		: "+Adicional.df.format(clasificacionPromedialAltos(1))+" cm");
-			imprimir("Altoo mayor		: "+Adicional.df.format(clasificacionPromedialAltos(2))+" cm"+"\n");
+			imprimir("Alto promedio		: "+clasificacionPromedialAltos(0)+" cm");
+			imprimir("Alto menor		: "+clasificacionPromedialAltos(1)+" cm");
+			imprimir("Altoo mayor		: "+clasificacionPromedialAltos(2)+" cm"+"\n");
 			
 			imprimir("Fondo promedio	: "+Adicional.df.format(clasificacionPromedialFondos(0))+" cm");
-			imprimir("Fondo menor		: "+Adicional.df.format(clasificacionPromedialFondos(1))+" cm");
-			imprimir("Fondo mayor		: "+Adicional.df.format(clasificacionPromedialFondos(2))+" cm"+"\n");
+			imprimir("Fondo menor		: "+clasificacionPromedialFondos(1)+" cm");
+			imprimir("Fondo mayor		: "+clasificacionPromedialFondos(2)+" cm"+"\n");
 			
-			imprimir("Quemador promedio	: "+Adicional.df.format(clasificacionPromedialQuemadores(0))+" quemadores");
-			imprimir("Quemador menor	: "+Adicional.df.format(clasificacionPromedialQuemadores(1))+" quemadores");
-			imprimir("Quemador mayor	: "+Adicional.df.format(clasificacionPromedialQuemadores(2))+" quemadores");
+			imprimir("Quemador promedio	: "+clasificacionPromedialQuemadores(0)+" quemadores");
+			imprimir("Quemador menor	: "+clasificacionPromedialQuemadores(1)+" quemadores");
+			imprimir("Quemador mayor	: "+clasificacionPromedialQuemadores(2)+" quemadores");
 			break;
 		}
 	}

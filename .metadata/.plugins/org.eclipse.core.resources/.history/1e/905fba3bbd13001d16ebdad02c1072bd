@@ -63,7 +63,7 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		
 		cboTipoDeReporte = new JComboBox();
 		cboTipoDeReporte.addActionListener(this);
-		cboTipoDeReporte.setModel(new DefaultComboBoxModel(new String[] {"Ventas por modelo", "Ventas en relación a la venta óptima", "Precios en relación al precio promedio", "Promedios, menores y mayores"}));
+		cboTipoDeReporte.setModel(new DefaultComboBoxModel(new String[] {"Ventas por modelo", "Ventas en relacion a la venta optima", "Precios en relacion al precio promedio", "Promedios, menores y mayores"}));
 		cboTipoDeReporte.setBounds(120, 19, 324, 21);
 		contentPanel.add(cboTipoDeReporte);
 		
@@ -98,7 +98,7 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 	protected void actionPerformedCboTipoReporte(ActionEvent e) {
 		/// declaración de variables
 		
-		int tipoReporte;   ///ahora si 
+		int tipoReporte;
 		
 		tipoReporte=cboTipoDeReporte.getSelectedIndex();
 				
@@ -123,35 +123,30 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas0);  // ahora si
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido0));
 			imprimir("Aporte a la cuota diaria                 : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo1);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas1);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas1);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido1));
 			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo2);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas2);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas2);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido2));
 			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo3);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas3);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas3);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido3));
 			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo4);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas4);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas4);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido4));
 			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
 			break;
 		case 1:
 			txtS.setText("VENTAS EN RELACIÓN A LA VENTA ÓPTIMA\n\n");
@@ -192,25 +187,13 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		default:
 			txtS.setText("PROMEDIOS, MENORES Y MAYORES\n\n");
 			
-			imprimir("Precio promedio	: S/. "+Adicional.df.format(clasificacionPromedialPrecios(0)));
-			imprimir("Precio menor		: S/. "+Adicional.df.format(clasificacionPromedialPrecios(1)));
-			imprimir("Precio mayor		: S/. "+Adicional.df.format(clasificacionPromedialPrecios(2))+"\n");
+			imprimir("Precio promedio	: S/. "+clasificacionPromedialPrecios(0));
+			imprimir("Precio menor		: S/. "+clasificacionPromedialPrecios(1));
+			imprimir("Precio mayor		: S/. "+clasificacionPromedialPrecios(2)+"\n");
 			
-			imprimir("Ancho promedio	: "+Adicional.df.format(clasificacionPromedialAnchos(0))+" cm");
-			imprimir("Ancho menor		: "+Adicional.df.format(clasificacionPromedialAnchos(1))+" cm");
-			imprimir("Ancho mayor		: "+Adicional.df.format(clasificacionPromedialAnchos(2))+" cm"+"\n");
-			
-			imprimir("Alto promedio		: "+Adicional.df.format(clasificacionPromedialAltos(0))+" cm");
-			imprimir("Alto menor		: "+Adicional.df.format(clasificacionPromedialAltos(1))+" cm");
-			imprimir("Altoo mayor		: "+Adicional.df.format(clasificacionPromedialAltos(2))+" cm"+"\n");
-			
-			imprimir("Fondo promedio	: "+Adicional.df.format(clasificacionPromedialFondos(0))+" cm");
-			imprimir("Fondo menor		: "+Adicional.df.format(clasificacionPromedialFondos(1))+" cm");
-			imprimir("Fondo mayor		: "+Adicional.df.format(clasificacionPromedialFondos(2))+" cm"+"\n");
-			
-			imprimir("Quemador promedio	: "+Adicional.df.format(clasificacionPromedialQuemadores(0))+" quemadores");
-			imprimir("Quemador menor	: "+Adicional.df.format(clasificacionPromedialQuemadores(1))+" quemadores");
-			imprimir("Quemador mayor	: "+Adicional.df.format(clasificacionPromedialQuemadores(2))+" quemadores");
+			imprimir("Ancho promedio	: "+clasificacionPromedialAnchos(0)+" cm");
+			imprimir("Ancho menor		: "+clasificacionPromedialAnchos(1)+" cm");
+			imprimir("Ancho mayor		: "+clasificacionPromedialAnchos(2)+" cm");
 			break;
 		}
 	}
@@ -227,11 +210,11 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		
 		
 		if(cantUniVendidas>FrmPrincipal.cantidadOptima)
-			return cantUniVendidas+"("+dif+" más que la cantidad óptima)";
+			return cantUniVendidas+"("+dif+" más que la cantidad �ptima)";
 		else if(cantUniVendidas<FrmPrincipal.cantidadOptima)
-			return cantUniVendidas+"("+dif+" menos que la cantidad óptima)";
+			return cantUniVendidas+"("+dif+" menos que la cantidad +optima)";
 		else
-			return FrmPrincipal.cantidadOptima+"(igual a la cantidad óptima)";
+			return FrmPrincipal.cantidadOptima+"(igual a la cantidad �ptima)";
 	}		
 	protected void actionPerformedBtnCerrar(ActionEvent e) {
 		dispose();
@@ -357,161 +340,6 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
         }		
 	}
 	
-	// altos
-			private double clasificacionPromedialAltos(int eleccion) {
-				double tempNum,promedio,mayor,menor;
-				promedio=(FrmPrincipal.alto0+FrmPrincipal.alto1+FrmPrincipal.alto2+FrmPrincipal.alto3+FrmPrincipal.alto4)/5;
-				tempNum=promedio;
-				
-		        if(FrmPrincipal.alto0>tempNum){
-		            tempNum=FrmPrincipal.alto0;        
-		        }
-		        if(FrmPrincipal.alto1>tempNum){
-		            tempNum=FrmPrincipal.alto1;        
-		        }
-		        if(FrmPrincipal.alto2>tempNum){
-		            tempNum=FrmPrincipal.alto2;        
-		        }
-		        if(FrmPrincipal.alto3>tempNum){
-		            tempNum=FrmPrincipal.alto3;        
-		        }
-		        if(FrmPrincipal.alto4>tempNum){
-		            tempNum=FrmPrincipal.alto4;        
-		        }
-		        mayor=tempNum;
-		        
-		        if(FrmPrincipal.alto0<tempNum){
-		            tempNum=FrmPrincipal.alto0;        
-		        }
-		        if(FrmPrincipal.alto1<tempNum){
-		            tempNum=FrmPrincipal.alto1;        
-		        }
-		        if(FrmPrincipal.alto2<tempNum){
-		            tempNum=FrmPrincipal.alto2;        
-		        }
-		        if(FrmPrincipal.alto3<tempNum){
-		            tempNum=FrmPrincipal.alto3;        
-		        }
-		        if(FrmPrincipal.alto4<tempNum){
-		            tempNum=FrmPrincipal.alto4;        
-		        }
-		        menor=tempNum;
-		        
-		        switch(eleccion) {
-		        case 0:        	
-		        	return promedio;
-		        case 1:
-		        	return menor;
-		        case 2:
-		        	return mayor;
-		        default:
-		        	return 0;
-		        }		
-			}
-			
-		// fondos
-			private double clasificacionPromedialFondos(int eleccion) {
-			double tempNum,promedio,mayor,menor;
-			promedio=(FrmPrincipal.fondo0+FrmPrincipal.fondo1+FrmPrincipal.fondo2+FrmPrincipal.fondo3+FrmPrincipal.fondo4)/5;
-			tempNum=promedio;
-						
-				if(FrmPrincipal.fondo0>tempNum){
-				tempNum=FrmPrincipal.fondo0;        
-				}
-				if(FrmPrincipal.fondo1>tempNum){
-				tempNum=FrmPrincipal.fondo1;        
-				}
-				if(FrmPrincipal.fondo2>tempNum){
-				tempNum=FrmPrincipal.fondo2;        
-				}
-				if(FrmPrincipal.fondo3>tempNum){
-				tempNum=FrmPrincipal.fondo3;        
-				}
-				if(FrmPrincipal.fondo4>tempNum){
-				tempNum=FrmPrincipal.fondo4;        
-				}
-				mayor=tempNum;
-				        
-				if(FrmPrincipal.fondo0<tempNum){
-				tempNum=FrmPrincipal.fondo0;        
-				}
-				if(FrmPrincipal.fondo1<tempNum){
-				tempNum=FrmPrincipal.fondo1;        
-				}
-				if(FrmPrincipal.fondo2<tempNum){
-				tempNum=FrmPrincipal.fondo2;        
-				}
-				if(FrmPrincipal.fondo3<tempNum){
-				tempNum=FrmPrincipal.fondo3;        
-				}
-				if(FrmPrincipal.fondo4<tempNum){
-				tempNum=FrmPrincipal.fondo4;        
-				}
-				menor=tempNum;
-				        
-				switch(eleccion) {
-				case 0:        	
-					return promedio;
-				case 1:
-					return menor;
-			    case 2:
-		        	return mayor;
-			    default:
-			    	return 0;
-			 }		
-			}		
-			
-		// quemadores
-			private int clasificacionPromedialQuemadores(int eleccion) {
-			int tempNum,promedio,mayor,menor;
-			promedio=(FrmPrincipal.quemadores0+FrmPrincipal.quemadores1+FrmPrincipal.quemadores2+FrmPrincipal.quemadores3+FrmPrincipal.quemadores4)/5;
-			tempNum=promedio;
-								
-				if(FrmPrincipal.quemadores0>tempNum){
-				tempNum=FrmPrincipal.quemadores0;        
-				}
-				if(FrmPrincipal.quemadores1>tempNum){
-				tempNum=FrmPrincipal.quemadores1;        
-				}
-				if(FrmPrincipal.quemadores2>tempNum){
-				tempNum=FrmPrincipal.quemadores2;        
-				}
-				if(FrmPrincipal.quemadores3>tempNum){
-				tempNum=FrmPrincipal.quemadores3;        
-				}
-				if(FrmPrincipal.quemadores4>tempNum){
-				tempNum=FrmPrincipal.quemadores4;        
-				}
-				mayor=tempNum;
-						        
-				if(FrmPrincipal.quemadores0<tempNum){
-				tempNum=FrmPrincipal.quemadores0;        
-				}
-				if(FrmPrincipal.quemadores1<tempNum){
-				tempNum=FrmPrincipal.quemadores1;        
-				}
-				if(FrmPrincipal.quemadores2<tempNum){
-				tempNum=FrmPrincipal.quemadores2;        
-				}
-				if(FrmPrincipal.quemadores3<tempNum){
-				tempNum=FrmPrincipal.quemadores3;        
-				}
-				if(FrmPrincipal.quemadores4<tempNum){
-				tempNum=FrmPrincipal.quemadores4;        
-				}
-				menor=tempNum;
-						        
-				switch(eleccion) {
-				case 0:        	
-					return promedio;
-				case 1:
-					return menor;
-			    case 2:
-				  	return mayor;
-			    default:
-			    	return 0;
-			 }		
-		}		
 	
 	// imprimir
 	public void imprimir(String msj) {

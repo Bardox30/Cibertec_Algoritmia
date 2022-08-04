@@ -202,7 +202,7 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 			
 			imprimir("Alto promedio		: "+Adicional.df.format(clasificacionPromedialAltos(0))+" cm");
 			imprimir("Alto menor		: "+Adicional.df.format(clasificacionPromedialAltos(1))+" cm");
-			imprimir("Altoo mayor		: "+Adicional.df.format(clasificacionPromedialAltos(2))+" cm"+"\n");
+			imprimir("Altoo mayor		: "+Adicional.df.format(clasificacionPromedialAltos(2)+" cm"+"\n");
 			
 			imprimir("Fondo promedio	: "+Adicional.df.format(clasificacionPromedialFondos(0))+" cm");
 			imprimir("Fondo menor		: "+Adicional.df.format(clasificacionPromedialFondos(1))+" cm");
