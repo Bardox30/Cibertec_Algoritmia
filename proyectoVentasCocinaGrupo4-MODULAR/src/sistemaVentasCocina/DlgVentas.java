@@ -223,6 +223,30 @@ public class DlgVentas extends JDialog implements ActionListener {
 	}
 
 	private void exportarDatos(double impPag) {
+		/// CUAL ES EL USUARIO?
+		int numUser=0;
+		
+		if(FrmPrincipal.entradaUser1==1)
+			numUser=1;
+		if(FrmPrincipal.entradaUser2==1)
+			numUser=2;
+		if(FrmPrincipal.entradaUser3==1)
+			numUser=3;
+		if(FrmPrincipal.entradaUser4==1)
+			numUser=4;
+		if(FrmPrincipal.entradaUser5==1)
+			numUser=5;
+		if(FrmPrincipal.entradaUser6==1)
+			numUser=6;
+		if(FrmPrincipal.entradaUser7==1)
+			numUser=7;
+		if(FrmPrincipal.entradaUser8==1)
+			numUser=8;
+		if(FrmPrincipal.entradaUser9==1)
+			numUser=9;
+		
+		Adicional.ventasUsuarios(numUser, impPag, cant);
+		
 		// Nro de ventas general
 		FrmPrincipal.nVentas++;
 		// Exportar al sistema para contabilidad

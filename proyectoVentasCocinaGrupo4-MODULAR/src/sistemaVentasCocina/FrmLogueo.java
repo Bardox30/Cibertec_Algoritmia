@@ -203,8 +203,9 @@ public class FrmLogueo extends JFrame {
 			Adicional.mensajeAlerta("Algún campo está vacio.");
 		} 
 		// Entrada de usuarios
-		else if (usuario.equals("admin") && clave.equals("123")) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+		else if (usuario.equals(String.valueOf(FrmPrincipal.usuario0)) && clave.equals(String.valueOf(FrmPrincipal.clave0))) {
+			FrmPrincipal.entradaUser0++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario0);
 
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -212,7 +213,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario1)) && clave.equals(String.valueOf(FrmPrincipal.clave1))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser1++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario1);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -224,7 +226,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario2)) && clave.equals(String.valueOf(FrmPrincipal.clave2))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser2++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario2);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -236,7 +239,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario3)) && clave.equals(String.valueOf(FrmPrincipal.clave3))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser3++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario3);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -248,7 +252,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario4)) && clave.equals(String.valueOf(FrmPrincipal.clave4))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser4++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario4);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -260,7 +265,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario5)) && clave.equals(String.valueOf(FrmPrincipal.clave5))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser5++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario5);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);
@@ -272,7 +278,8 @@ public class FrmLogueo extends JFrame {
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario6)) && clave.equals(String.valueOf(FrmPrincipal.clave6))) {
-			Adicional.mensajeBienvenido("Bienvenido al sistema");
+			FrmPrincipal.entradaUser6++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario6);
 			
 			FrmPrincipal eje = new FrmPrincipal();
 			eje.setVisible(true);

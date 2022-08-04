@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Utils.Adicional;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -164,7 +167,78 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	public static int clave4=12345;
 	public static int clave5=12345;
 	public static int clave6=12345;
+	//
+	/// USUARIOS ADICIONALES
+	public static String usuario7="";
+	public static String usuario8="";
+	public static String usuario9="";
+	
+	public static int clave7=0;
+	public static int clave8=0;
+	public static int clave9=0;
+	
+	//
+	//////////////////////////////////////////////
+	// Entrada usuarios
+	public static int entradaUser0=0;
+	public static int entradaUser1=0;
+	public static int entradaUser2=0;
+	public static int entradaUser3=0;
+	public static int entradaUser4=0;
+	public static int entradaUser5=0;
+	public static int entradaUser6=0;
+	public static int entradaUser7=0;
+	public static int entradaUser8=0;
+	public static int entradaUser9=0;
+	///////////////////////////////////////////
+	public static double montoRecaudoUser0;
+	public static int cantVentasUser0;
+	public static int produVendiUser0;
+	
+	public static double montoRecaudoUser1;
+	public static int cantVentasUser1;
+	public static int produVendiUser1;
+	
+	public static double montoRecaudoUser2;
+	public static int cantVentasUser2;
+	public static int produVendiUser2;
+	
+	public static double montoRecaudoUser3;
+	public static int cantVentasUser3;
+	public static int produVendiUser3;
+	
+	public static double montoRecaudoUser4;
+	public static int cantVentasUser4;
+	public static int produVendiUser4;
+	
+	public static double montoRecaudoUser5;
+	public static int cantVentasUser5;
+	public static int produVendiUser5;
+	
+	public static double montoRecaudoUser6;
+	public static int cantVentasUser6;
+	public static int produVendiUser6;
+	
+	public static double montoRecaudoUser7;
+	public static int cantVentasUser7;
+	public static int produVendiUser7;
+	
+	public static double montoRecaudoUser8;
+	public static int cantVentasUser8;
+	public static int produVendiUser8;
+	
+	public static double montoRecaudoUser9;
+	public static int cantVentasUser9;
+	public static int produVendiUser9;
+	
+	
+	
+	//////////////////////////////////////////
+	
 	private JMenuItem mntmCambiarDeUsuario;
+	private JMenu mnSeguimiento;
+	private JMenuItem mntmUsuarios;
+	private JMenuItem mntmProductividad;
 	
 	
 	
@@ -277,6 +351,17 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		mntmAcercaDeTienda.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm10.png")));
 		mntmAcercaDeTienda.addActionListener(this);
 		mnNewMenu.add(mntmAcercaDeTienda);
+		
+		mnSeguimiento = new JMenu("Seguimiento");
+		menuBar.add(mnSeguimiento);
+		
+		mntmUsuarios = new JMenuItem("Usuarios");
+		mntmUsuarios.addActionListener(this);
+		mnSeguimiento.add(mntmUsuarios);
+		
+		mntmProductividad = new JMenuItem("Productividad");
+		mntmProductividad.addActionListener(this);
+		mnSeguimiento.add(mntmProductividad);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setForeground(Color.BLACK);
@@ -302,6 +387,12 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmProductividad) {
+			actionPerformedMntmProductividad(e);
+		}
+		if (e.getSource() == mntmUsuarios) {
+			actionPerformedMntmUsuarios(e);
+		}
 		if (e.getSource() == mntmCambiarDeUsuario) {
 			actionPerformedMntmCambiarDeUsuario(e);
 		}
@@ -342,7 +433,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 
 	protected void actionPerformedMntmSalir(ActionEvent e) {
 		// Cerrar aplicación
-		System.exit(0);
+		System.exit(0);		
 	}
 
 	protected void actionPerformedMntmConsultarCocina(ActionEvent e) {
@@ -418,9 +509,25 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		return (caclImporteGeneralAcum() * 100) / FrmPrincipal.cuotaDiaria;
 	}
 	protected void actionPerformedMntmCambiarDeUsuario(ActionEvent e) {
+		//INDICAR QUE SE ENTRARÁ DESDE OTRO USUARIO
+		Adicional.indicarCambiarUsuario();
+		
+		//IR A LOGUIN
 		FrmLogueo log = new FrmLogueo();
 		log.setVisible(true);
 		this.dispose();
+		
 		//FALTA CENTRAR LA VENTANA DE LOGUEO
+		/////////////////////////////////////
+	}
+	protected void actionPerformedMntmUsuarios(ActionEvent e) {
+		DlgUsuarios reportes = new DlgUsuarios();
+		reportes.setVisible(true);
+		reportes.setLocationRelativeTo(this);
+	}
+	protected void actionPerformedMntmProductividad(ActionEvent e) {
+		DlgProductividad reportes = new DlgProductividad();
+		reportes.setVisible(true);
+		reportes.setLocationRelativeTo(this);
 	}
 }

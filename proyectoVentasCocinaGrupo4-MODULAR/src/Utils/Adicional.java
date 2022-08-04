@@ -8,8 +8,91 @@ import javax.swing.JOptionPane;
 
 import sistemaVentasCocina.DlgModificarCocina;
 import sistemaVentasCocina.DlgVentas;
+import sistemaVentasCocina.FrmPrincipal;
 
 public class Adicional {
+	
+	
+	
+	public static void indicarCambiarUsuario() {
+		if(FrmPrincipal.entradaUser0==1)
+			FrmPrincipal.entradaUser0=0;
+		if(FrmPrincipal.entradaUser1==1)
+			FrmPrincipal.entradaUser1=0;
+		if(FrmPrincipal.entradaUser2==1)
+			FrmPrincipal.entradaUser2=0;
+		if(FrmPrincipal.entradaUser3==1)
+			FrmPrincipal.entradaUser3=0;
+		if(FrmPrincipal.entradaUser4==1)
+			FrmPrincipal.entradaUser4=0;
+		if(FrmPrincipal.entradaUser5==1)
+			FrmPrincipal.entradaUser5=0;
+		if(FrmPrincipal.entradaUser6==1)
+			FrmPrincipal.entradaUser6=0;
+		if(FrmPrincipal.entradaUser7==1)
+			FrmPrincipal.entradaUser7=0;
+		if(FrmPrincipal.entradaUser8==1)
+			FrmPrincipal.entradaUser8=0;
+		if(FrmPrincipal.entradaUser9==1)
+			FrmPrincipal.entradaUser9=0;
+	}
+	
+	public static void ventasUsuarios(int numUser, double impPag, int cant) {	
+		switch(numUser) {
+		case 0:
+			FrmPrincipal.montoRecaudoUser0+=impPag;
+			FrmPrincipal.cantVentasUser0++;
+			FrmPrincipal.produVendiUser0+=cant;
+			break;			
+		case 1:
+			FrmPrincipal.montoRecaudoUser1+=impPag;
+			FrmPrincipal.cantVentasUser1++;
+			FrmPrincipal.produVendiUser1+=cant;
+			break;
+		case 2:
+			FrmPrincipal.montoRecaudoUser2+=impPag;
+			FrmPrincipal.cantVentasUser2++;
+			FrmPrincipal.produVendiUser2+=cant;
+			break;
+		case 3:
+			FrmPrincipal.montoRecaudoUser3+=impPag;
+			FrmPrincipal.cantVentasUser3++;
+			FrmPrincipal.produVendiUser3+=cant;
+			break;
+		case 4:
+			FrmPrincipal.montoRecaudoUser4+=impPag;
+			FrmPrincipal.cantVentasUser4++;
+			FrmPrincipal.produVendiUser4+=cant;
+			break;
+		case 5:
+			FrmPrincipal.montoRecaudoUser5+=impPag;
+			FrmPrincipal.cantVentasUser5++;
+			FrmPrincipal.produVendiUser5+=cant;
+			break;
+		case 6:
+			FrmPrincipal.montoRecaudoUser6+=impPag;
+			FrmPrincipal.cantVentasUser6++;
+			FrmPrincipal.produVendiUser6+=cant;
+			break;
+		case 7:
+			FrmPrincipal.montoRecaudoUser7+=impPag;
+			FrmPrincipal.cantVentasUser7++;
+			FrmPrincipal.produVendiUser7+=cant;
+			break;
+		case 8:
+			FrmPrincipal.montoRecaudoUser8+=impPag;
+			FrmPrincipal.cantVentasUser8++;
+			FrmPrincipal.produVendiUser8+=cant;
+			break;
+		case 9:
+			FrmPrincipal.montoRecaudoUser9+=impPag;
+			FrmPrincipal.cantVentasUser9++;
+			FrmPrincipal.produVendiUser9+=cant;
+			break;
+		}	
+	}
+	
+	
 	
 	// CONTROLAR DECIMALES
 	public static DecimalFormat df = new DecimalFormat("0.00");
