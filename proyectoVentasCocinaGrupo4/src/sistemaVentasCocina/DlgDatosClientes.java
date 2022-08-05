@@ -1,9 +1,6 @@
 package sistemaVentasCocina;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -13,10 +10,10 @@ import CreatePdf.CreatePdf;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.JRadioButton;
-import javax.swing.JRadioButtonMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class DlgDatosClientes extends JDialog {
+public class DlgDatosClientes extends JDialog implements ActionListener {
 
 	private final JPanel contentPanel = new JPanel();
 	private JLabel lblNombre;
@@ -28,9 +25,6 @@ public class DlgDatosClientes extends JDialog {
 	private JTextField txtApellido;
 	private JButton btnSalir;
 	private JTextField txtDNI;
-	private JLabel lblSexo;
-	private JRadioButton rdoHombre;
-	private JRadioButton rdoMujer;
 
 	/**
 	 * Launch the application.
@@ -50,7 +44,7 @@ public class DlgDatosClientes extends JDialog {
 	 */
 	public DlgDatosClientes() {
 		setTitle("Datos de cliente para proforma");
-		setBounds(100, 100, 519, 252);
+		setBounds(100, 100, 519, 201);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -69,11 +63,12 @@ public class DlgDatosClientes extends JDialog {
 		contentPanel.add(lblDNI);
 		
 		btnDescargarPDF = new JButton("Descargar PDF");
-		btnDescargarPDF.setBounds(358, 44, 119, 23);
+		btnDescargarPDF.addActionListener(this);
+		btnDescargarPDF.setBounds(358, 20, 119, 23);
 		contentPanel.add(btnDescargarPDF);
 		
 		btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.setBounds(358, 90, 119, 23);
+		btnLimpiar.setBounds(358, 66, 119, 23);
 		contentPanel.add(btnLimpiar);
 		
 		txtNombre = new JTextField();
@@ -92,35 +87,21 @@ public class DlgDatosClientes extends JDialog {
 		txtDNI.setColumns(10);
 		
 		btnSalir = new JButton("Salir");
-		btnSalir.setBounds(358, 160, 119, 23);
+		btnSalir.setBounds(358, 121, 119, 23);
 		contentPanel.add(btnSalir);
 		
-		lblSexo = new JLabel("Sexo");
-		lblSexo.setBounds(22, 160, 89, 14);
-		contentPanel.add(lblSexo);
 		
-		rdoHombre = new JRadioButton("Hombre");
-		rdoHombre.setBounds(121, 156, 89, 23);
-		contentPanel.add(rdoHombre);
-		
-		rdoMujer = new JRadioButton("Mujer");
-		rdoMujer.setBounds(212, 156, 89, 23);
-		contentPanel.add(rdoMujer);
-		
-		// Agrupar botones
-		ButtonGroup btnGroup = new ButtonGroup();
-		btnGroup.add(rdoHombre);
-		btnGroup.add(rdoMujer);
-		
-		public void actionPerformed(ActionEvent, event) {
-			
-		}
-		
-		///////
-		CreatePdf.main_PDF();
 		///////
 	}	
 
 	
 	
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnDescargarPDF) {
+			actionPerformedBtnDescargarPDF(e);
+		}
+	}
+	protected void actionPerformedBtnDescargarPDF(ActionEvent e) {
+		CreatePdf.main_PDF();
+	}
 }

@@ -9,7 +9,24 @@ import sistemaVentasCocina.FrmPrincipal;
 
 public class Adicional {
 	
-	
+	public static void getUsuario(int numUser, String usuario, String clave) {	
+		switch(numUser) {
+		case 7:
+			FrmPrincipal.usuario7=usuario;
+			FrmPrincipal.clave7=clave;
+			break;			
+		case 8:
+			FrmPrincipal.usuario8=usuario;
+			FrmPrincipal.clave8=clave;
+			break;
+		case 9:
+			FrmPrincipal.usuario9=usuario;
+			FrmPrincipal.clave9=clave;
+			break;
+		default:
+			break;
+		}	
+	}
 	
 	public static void indicarCambiarUsuario() {
 		if(FrmPrincipal.entradaUser0==1)

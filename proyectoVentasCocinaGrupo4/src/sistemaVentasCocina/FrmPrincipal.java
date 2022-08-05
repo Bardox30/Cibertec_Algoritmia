@@ -175,13 +175,13 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	public static int clave6=12345;
 	//
 	/// USUARIOS ADICIONALES
-	public static String usuario7="";
-	public static String usuario8="";
-	public static String usuario9="";
+	public static String usuario7;
+	public static String usuario8;
+	public static String usuario9;
 	
-	public static int clave7=0;
-	public static int clave8=0;
-	public static int clave9=0;
+	public static String clave7;
+	public static String clave8;
+	public static String clave9;
 	
 	//
 	//////////////////////////////////////////////
@@ -196,6 +196,8 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	public static int entradaUser7=0;
 	public static int entradaUser8=0;
 	public static int entradaUser9=0;
+	
+	public static int nUsuarios=6;
 	///////////////////////////////////////////
 	public static double montoRecaudoUser0;
 	public static int cantVentasUser0;

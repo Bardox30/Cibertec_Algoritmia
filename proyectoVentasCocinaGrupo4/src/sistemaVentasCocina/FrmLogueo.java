@@ -34,7 +34,7 @@ public class FrmLogueo extends JFrame {
 	private JLabel lblUsuario;
 	private JTextField txtUsuario;
 	private JLabel lblContrasena;
-	private JPasswordField jPasword;
+	private JPasswordField jPassword;
 	private JButton btnIngresar;
 	private JButton btnSalir;
 	private JLabel lblVer;
@@ -107,27 +107,27 @@ public class FrmLogueo extends JFrame {
 		lblContrasena.setBounds(83, 134, 146, 32);
 		contentPane.add(lblContrasena);
 
-		jPasword = new JPasswordField();
-		jPasword.addMouseMotionListener(new MouseMotionAdapter() {
+		jPassword = new JPasswordField();
+		jPassword.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseMoved(MouseEvent e) {
 				mouseMovedJPasword(e);
 			}
 		});
-		jPasword.addMouseListener(new MouseAdapter() {
+		jPassword.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				mouseExitedJPasword(e);
 			}
 		});
-		jPasword.addKeyListener(new KeyAdapter() {
+		jPassword.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				keyTypedJPasword(e);
 			}
 		});
-		jPasword.setBounds(239, 142, 117, 23);
-		contentPane.add(jPasword);
+		jPassword.setBounds(239, 142, 117, 23);
+		contentPane.add(jPassword);
 
 		btnIngresar = new JButton("INGRESAR");
 		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 15));
@@ -211,92 +211,121 @@ public class FrmLogueo extends JFrame {
 			FrmPrincipal.entradaUser1++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario1);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario2)) && clave.equals(String.valueOf(FrmPrincipal.clave2))) {
 			FrmPrincipal.entradaUser2++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario2);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario3)) && clave.equals(String.valueOf(FrmPrincipal.clave3))) {
 			FrmPrincipal.entradaUser3++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario3);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario4)) && clave.equals(String.valueOf(FrmPrincipal.clave4))) {
 			FrmPrincipal.entradaUser4++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario4);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario5)) && clave.equals(String.valueOf(FrmPrincipal.clave5))) {
 			FrmPrincipal.entradaUser5++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario5);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario6)) && clave.equals(String.valueOf(FrmPrincipal.clave6))) {
 			FrmPrincipal.entradaUser6++;
 			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario6);
 			
-			FrmPrincipal eje = new FrmPrincipal();
-			eje.setVisible(true);
-			eje.setLocationRelativeTo(this);
+			// Entrada al sistema
+			entrarPrincipal();
 			
 			// Inhabilitar opciones
-			FrmPrincipal.mnConfiguracion.setEnabled(false);
-			FrmPrincipal.mntmModificarCocina.setEnabled(false);
+			inhabilitarOpciones();
+
+			this.dispose();
+		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario7)) && clave.equals(String.valueOf(FrmPrincipal.clave7))) {
+			FrmPrincipal.entradaUser7++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario7);
+			
+			// Entrada al sistema
+			entrarPrincipal();
+			
+			// Inhabilitar opciones
+			inhabilitarOpciones();
+
+			this.dispose();
+		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario8)) && clave.equals(String.valueOf(FrmPrincipal.clave8))) {
+			FrmPrincipal.entradaUser8++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario8);
+			
+			// Entrada al sistema
+			entrarPrincipal();			
+			// Inhabilitar opciones
+			inhabilitarOpciones();
+
+			this.dispose();
+		} else if (usuario.equals(String.valueOf(FrmPrincipal.usuario9)) && clave.equals(String.valueOf(FrmPrincipal.clave9))) {
+			FrmPrincipal.entradaUser9++;
+			Adicional.mensajeBienvenido("Bienvenido al sistema, "+FrmPrincipal.usuario9);
+			
+			// Entrada al sistema
+			entrarPrincipal();
+			
+			// Inhabilitar opciones
+			inhabilitarOpciones();
 
 			this.dispose();
 		} else {
 			Adicional.mensaje("Usuario y/o clave incorrecta");
 		}
-
 	}
 
 	private String getClave() {
-		return String.valueOf(jPasword.getPassword());
+		return String.valueOf(jPassword.getPassword());
 	}
 
 	private String getUsuario() {
 		return txtUsuario.getText().trim();
+	}
+	
+	private void entrarPrincipal() {
+		FrmPrincipal eje = new FrmPrincipal();
+		eje.setVisible(true);
+		eje.setLocationRelativeTo(this);
+	}
+	private void inhabilitarOpciones(){
+		FrmPrincipal.mnConfiguracion.setEnabled(false);
+		FrmPrincipal.mntmModificarCocina.setEnabled(false);
 	}
 	
 	//botón salir
@@ -318,14 +347,14 @@ public class FrmLogueo extends JFrame {
 	protected void mouseClickedLblVer(MouseEvent e) {
 		lblVer.setVisible(false);
 		lblNover.setVisible(true);
-		jPasword.setEchoChar((char)0);		
+		jPassword.setEchoChar((char)0);		
 	}
 	
 	//para que no sea visible la contraseña
 	protected void mouseClickedLblNover(MouseEvent e) {
 		lblVer.setVisible(true);
 		lblNover.setVisible(false);
-		jPasword.setEchoChar('*');
+		jPassword.setEchoChar('*');
 	}
 	protected void mouseMovedTxtUsuario(MouseEvent e) {
 			txtUsuario.setBackground(Color.getHSBColor(44f, 70f, 46f));
@@ -335,9 +364,9 @@ public class FrmLogueo extends JFrame {
 		txtUsuario.setBackground(Color.WHITE);
 	}
 	protected void mouseMovedJPasword(MouseEvent e) {
-		jPasword.setBackground(Color.getHSBColor(44f, 70f, 46f));
+		jPassword.setBackground(Color.getHSBColor(44f, 70f, 46f));
 	}
 	protected void mouseExitedJPasword(MouseEvent e) {
-		jPasword.setBackground(Color.WHITE);
+		jPassword.setBackground(Color.WHITE);
 	}
 }
