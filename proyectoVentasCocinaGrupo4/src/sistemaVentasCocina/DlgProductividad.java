@@ -1,9 +1,6 @@
 package sistemaVentasCocina;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
-import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -23,9 +20,13 @@ import java.awt.Toolkit;
 
 public class DlgProductividad extends JDialog implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JLabel lblProceso;
-	private JComboBox cboProcesos;
+	private JComboBox<String> cboProcesos;
 	private JTextArea txtS;
 	private JScrollPane scrollPane;
 	
@@ -62,9 +63,9 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		lblProceso.setBounds(10, 11, 87, 14);
 		contentPanel.add(lblProceso);
 		
-		cboProcesos = new JComboBox();
+		cboProcesos = new JComboBox<String>();
 		cboProcesos.addActionListener(this);
-		cboProcesos.setModel(new DefaultComboBoxModel(new String[] {"Inventario de ventas", "Gráfico de estadísticas", "Stock"}));
+		cboProcesos.setModel(new DefaultComboBoxModel<String>(new String[] {"Inventario de ventas", "Gráfico de estadísticas", "Stock"}));
 		cboProcesos.setBounds(107, 7, 194, 22);
 		contentPanel.add(cboProcesos);
 		

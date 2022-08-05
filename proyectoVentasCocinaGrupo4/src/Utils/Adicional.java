@@ -9,8 +9,6 @@ import sistemaVentasCocina.FrmPrincipal;
 
 public class Adicional {
 	
-	
-	
 	public static void indicarCambiarUsuario() {
 		if(FrmPrincipal.entradaUser0==1)
 			FrmPrincipal.entradaUser0=0;

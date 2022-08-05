@@ -1,8 +1,6 @@
 package sistemaVentasCocina;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -18,6 +16,10 @@ import java.awt.Toolkit;
 
 public class DlgUsuarios extends JDialog implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JButton btnListarUsuarios;
 	private JButton btnCrearNuevoUsuario;

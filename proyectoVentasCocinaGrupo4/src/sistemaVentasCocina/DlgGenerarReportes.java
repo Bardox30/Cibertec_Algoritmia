@@ -103,9 +103,8 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 	}
 	
 	protected void actionPerformedCboTipoReporte(ActionEvent e) {
-		/// declaración de variables
-		
-		int tipoReporte;   ///ahora si 
+		/// declaración de variables		
+		int tipoReporte;
 		
 		tipoReporte=cboTipoDeReporte.getSelectedIndex();
 				
