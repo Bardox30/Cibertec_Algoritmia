@@ -3,11 +3,8 @@ package Utils;
 import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import sistemaVentasCocina.DlgModificarCocina;
-import sistemaVentasCocina.DlgVentas;
 import sistemaVentasCocina.FrmPrincipal;
 
 public class Adicional {
