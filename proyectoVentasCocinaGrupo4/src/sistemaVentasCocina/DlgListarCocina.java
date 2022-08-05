@@ -13,6 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class DlgListarCocina extends JDialog implements ActionListener {
 
@@ -44,6 +47,8 @@ public class DlgListarCocina extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgListarCocina() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgListarCocina.class.getResource("/img/listar1.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setTitle("Listado de cocinas");
 		setBounds(100, 100, 503, 495);
@@ -55,7 +60,7 @@ public class DlgListarCocina extends JDialog implements ActionListener {
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(10, 11, 469, 404);
+		scrollPane.setBounds(10, 11, 469, 389);
 		contentPanel.add(scrollPane);
 		
 		txtS = new JTextArea();
@@ -63,13 +68,17 @@ public class DlgListarCocina extends JDialog implements ActionListener {
 		scrollPane.setViewportView(txtS);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgListarCocina.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(139, 424, 89, 23);
+		btnCerrar.setBounds(119, 410, 115, 35);
 		contentPanel.add(btnCerrar);
 		
 		btnListar = new JButton("Listar");
+		btnListar.setIcon(new ImageIcon(DlgListarCocina.class.getResource("/img/listar1.png")));
+		btnListar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnListar.addActionListener(this);
-		btnListar.setBounds(253, 424, 89, 23);
+		btnListar.setBounds(253, 410, 115, 35);
 		contentPanel.add(btnListar);
 		
 	}
@@ -102,12 +111,12 @@ public class DlgListarCocina extends JDialog implements ActionListener {
 		public void imprimirCocina(String modelo, double precio, double ancho, double alto, double fondo, int quemadores) {
 			
 			txtS.append("\n");
-			imprimir("Modelo    : " + modelo); 
-			imprimir("Precio      : S/ " + Adicional.df.format(precio));
-			imprimir("Ancho      : " + ancho + " cm");
-			imprimir("Alto           : " + alto + " cm");
-			imprimir("Fondo      : " + fondo + " cm");
-			imprimir("Peso        : " + Adicional.df.format(quemadores));	
+			imprimir("Modelo 	: " + modelo); 
+			imprimir("Precio 	: S/ " + Adicional.df.format(precio));
+			imprimir("Ancho 	: " + ancho + " cm");
+			imprimir("Alto 	: " + alto + " cm");
+			imprimir("Fondo 	: " + fondo + " cm");
+			imprimir("Quemadores 	: " + quemadores);	
 
 		}
 	

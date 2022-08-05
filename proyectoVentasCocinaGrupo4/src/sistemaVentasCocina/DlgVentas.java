@@ -17,6 +17,11 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Font;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class DlgVentas extends JDialog implements ActionListener {
 
@@ -39,6 +44,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 	private double precio;
 
 	DecimalFormat df = new DecimalFormat("0.00");
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -59,6 +65,8 @@ public class DlgVentas extends JDialog implements ActionListener {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public DlgVentas() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgVentas.class.getResource("/img/ventas.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Vender");
 		setBounds(100, 100, 450, 334);
 		getContentPane().setLayout(new BorderLayout());
@@ -101,18 +109,27 @@ public class DlgVentas extends JDialog implements ActionListener {
 		txtCantidad.setColumns(10);
 
 		btnVender = new JButton("Vender");
+		btnVender.setIcon(new ImageIcon(DlgVentas.class.getResource("/img/vender1.png")));
+		btnVender.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnVender.addActionListener(this);
-		btnVender.setBounds(337, 20, 89, 23);
+		btnVender.setBounds(302, 10, 115, 35);
 		contentPanel.add(btnVender);
 
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgVentas.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(337, 49, 89, 23);
+		btnCerrar.setBounds(302, 53, 115, 35);
 		contentPanel.add(btnCerrar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(10, 99, 416, 187);
+		contentPanel.add(scrollPane);
 
 		txtS = new JTextArea();
-		txtS.setBounds(10, 99, 416, 187);
-		contentPanel.add(txtS);
+		scrollPane.setViewportView(txtS);
 		// mostrar los datos del modelo 0
 		txtPrecio.setText("" + FrmPrincipal.precio0);
 
@@ -299,7 +316,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 			imprimir("Cantidad		: " + cant);
 			imprimir("Importe de compra	: S/. " + Adicional.df.format(impComp));
 			imprimir("Importe de descuento	: S/. " + Adicional.df.format(impDsct));
-			imprimir("Importe de pago	: S/. " + Adicional.df.format(impPag));
+			imprimir("Importe a pagar		: S/. " + Adicional.df.format(impPag));
 			imprimir("Obsequio		: " + obs);
 			break;
 		case 1:
@@ -309,17 +326,17 @@ public class DlgVentas extends JDialog implements ActionListener {
 			imprimir("Cantidad		: " + cant);
 			imprimir("Importe de compra	: S/. " + Adicional.df.format(impComp));
 			imprimir("Importe de descuento	: S/. " + Adicional.df.format(impDsct));
-			imprimir("Importe de pago	: S/. " + Adicional.df.format(impPag));
+			imprimir("Importe a pagar		: S/. " + Adicional.df.format(impPag));
 			imprimir("Obsequio		: " + obs);
 			break;
 		case 2:
 			txtS.setText("BOLETA DE VENTA\n\n");
 			imprimir("Modelo		: " + FrmPrincipal.modelo2);
 			imprimir("Precio		: S/. " + Adicional.df.format(precio));
-			imprimir("Cantidad		: " + cant + "\n");
+			imprimir("Cantidad		: " + cant);
 			imprimir("Importe de compra	: S/. " + Adicional.df.format(impComp));
 			imprimir("Importe de descuento	: S/. " + Adicional.df.format(impDsct));
-			imprimir("Importe de pago	: S/. " + Adicional.df.format(impPag));
+			imprimir("Importe a pagar		: S/. " + Adicional.df.format(impPag));
 			imprimir("Obsequio		: " + obs);
 			break;
 		case 3:
@@ -329,7 +346,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 			imprimir("Cantidad		: " + cant);
 			imprimir("Importe de compra	: S/. " + Adicional.df.format(impComp));
 			imprimir("Importe de descuento	: S/. " + Adicional.df.format(impDsct));
-			imprimir("Importe de pago	: S/. " + Adicional.df.format(impPag));
+			imprimir("Importe a pagar		: S/. " + Adicional.df.format(impPag));
 			imprimir("Obsequio		: " + obs);
 			break;
 		default:
@@ -339,7 +356,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 			imprimir("Cantidad		: " + cant);
 			imprimir("Importe de compra	: S/. " + Adicional.df.format(impComp));
 			imprimir("Importe de descuento	: S/. " + Adicional.df.format(impDsct));
-			imprimir("Importe de pago	: S/. " + Adicional.df.format(impPag));
+			imprimir("Importe a pagar		: S/. " + Adicional.df.format(impPag));
 			imprimir("Obsequio		: " + obs);
 			break;
 		}

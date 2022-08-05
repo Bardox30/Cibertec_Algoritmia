@@ -1,6 +1,8 @@
 package sistemaVentasCocina;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -11,6 +13,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class DlgUsuarios extends JDialog implements ActionListener {
 
@@ -37,6 +41,8 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgUsuarios() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgUsuarios.class.getResource("/img/user1.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Usuarios");
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());

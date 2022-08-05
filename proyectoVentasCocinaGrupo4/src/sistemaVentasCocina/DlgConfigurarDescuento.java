@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.Font;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class DlgConfigurarDescuento extends JDialog implements ActionListener {
 
@@ -53,10 +57,12 @@ public class DlgConfigurarDescuento extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgConfigurarDescuento() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarDescuento.class.getResource("/img/descuento.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setResizable(false);
 		setTitle("Configurar porcentajes de descuento");
-		setBounds(100, 100, 450, 201);
+		setBounds(100, 100, 450, 166);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -139,14 +145,18 @@ public class DlgConfigurarDescuento extends JDialog implements ActionListener {
 		}
 		{
 			btnAceptar = new JButton("Aceptar");
+			btnAceptar.setIcon(new ImageIcon(DlgConfigurarDescuento.class.getResource("/img/guardar.png")));
+			btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 			btnAceptar.addActionListener(this);
-			btnAceptar.setBounds(341, 6, 85, 21);
+			btnAceptar.setBounds(302, 10, 115, 35);
 			contentPanel.add(btnAceptar);
 		}
 		{
 			btnCancelar = new JButton("Cancelar");
+			btnCancelar.setIcon(new ImageIcon(DlgConfigurarDescuento.class.getResource("/img/exit2.png")));
+			btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 12));
 			btnCancelar.addActionListener(this);
-			btnCancelar.setBounds(341, 29, 85, 21);
+			btnCancelar.setBounds(302, 56, 115, 35);
 			contentPanel.add(btnCancelar);
 			
 			txtPorcentaje1.setText("" + FrmPrincipal.porcentaje1);

@@ -9,12 +9,16 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class DlgModificarCocina extends JDialog implements ActionListener {
 
@@ -57,10 +61,12 @@ public class DlgModificarCocina extends JDialog implements ActionListener {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public DlgModificarCocina() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModificarCocina.class.getResource("/img/modificar.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setForeground(Color.GREEN);
 		setTitle("Modificar cocina");
-		setBounds(100, 100, 506, 217);
+		setBounds(100, 100, 471, 217);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -123,8 +129,10 @@ public class DlgModificarCocina extends JDialog implements ActionListener {
 		txtQuemadores.setColumns(10);
 
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgModificarCocina.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(376, 20, 89, 23);
+		btnCerrar.setBounds(320, 70, 119, 35);
 		contentPanel.add(btnCerrar);
 
 		// mostrar datos de modelo 0
@@ -135,8 +143,10 @@ public class DlgModificarCocina extends JDialog implements ActionListener {
 		txtQuemadores.setText("" + FrmPrincipal.quemadores0);
 
 		btnGrabar = new JButton("Grabar");
+		btnGrabar.setIcon(new ImageIcon(DlgModificarCocina.class.getResource("/img/guardar.png")));
+		btnGrabar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnGrabar.addActionListener(this);
-		btnGrabar.setBounds(376, 45, 89, 23);
+		btnGrabar.setBounds(320, 20, 119, 35);
 		contentPanel.add(btnGrabar);
 
 	}

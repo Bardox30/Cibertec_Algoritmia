@@ -11,11 +11,15 @@ import Utils.Adicional;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import java.text.DecimalFormat;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.SystemColor;
 
 public class FrmPrincipal extends JFrame implements ActionListener {
 
@@ -266,99 +270,130 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(FrmPrincipal.class.getResource("/img/tienda3.png")));
+		setFont(new Font("Segoe UI", Font.BOLD, 20));
 		setResizable(false);
 		setTitle("Tienda 1.0");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 758, 600);
+		setBounds(100, 100, 772, 600);
 		this.setLocationRelativeTo(null);
 
 		menuBar = new JMenuBar();
 		menuBar.setForeground(new Color(47, 79, 79));
-		menuBar.setBackground(Color.ORANGE);
+		menuBar.setBackground(SystemColor.inactiveCaption);
 		setJMenuBar(menuBar);
 
 		mnArchivo = new JMenu("Archivo");
+		mnArchivo.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/archivo.png")));
+		mnArchivo.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnArchivo);
 
 		mntmSalir = new JMenuItem("Salir");
-		mntmSalir.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/cerrar1.png")));
+		mntmSalir.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmSalir.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/exit1.png")));
 		mntmSalir.addActionListener(this);
 		
 		mntmCambiarDeUsuario = new JMenuItem("Cambiar de usuario");
+		mntmCambiarDeUsuario.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/usuario.png")));
+		mntmCambiarDeUsuario.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		mntmCambiarDeUsuario.addActionListener(this);
 		mnArchivo.add(mntmCambiarDeUsuario);
 		mnArchivo.add(mntmSalir);
 
 		mnMantenimiento = new JMenu("Mantenimiento");
+		mnMantenimiento.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/mantenimiento.png")));
+		mnMantenimiento.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnMantenimiento);
 
 		mntmConsultarCocina = new JMenuItem("Consultar cocina");
-		mntmConsultarCocina.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm1.png")));
+		mntmConsultarCocina.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmConsultarCocina.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/consultar1.png")));
 		mntmConsultarCocina.addActionListener(this);
 		mnMantenimiento.add(mntmConsultarCocina);
 
 		mntmModificarCocina = new JMenuItem("Modificar cocina");
-		mntmModificarCocina.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm2.png")));
+		mntmModificarCocina.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmModificarCocina.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/modificar.png")));
 		mntmModificarCocina.addActionListener(this);
 		mnMantenimiento.add(mntmModificarCocina);
 
 		mntmListarCocinas = new JMenuItem("Listar cocinas");
-		mntmListarCocinas.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm3.png")));
+		mntmListarCocinas.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmListarCocinas.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/listar1.png")));
 		mntmListarCocinas.addActionListener(this);
 		mnMantenimiento.add(mntmListarCocinas);
 
 		mnVentas = new JMenu("Ventas");
+		mnVentas.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/ventas.png")));
+		mnVentas.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnVentas);
 
 		mntmVender = new JMenuItem("Vender");
-		mntmVender.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm4.png")));
+		mntmVender.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmVender.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/vender1.png")));
 		mntmVender.addActionListener(this);
 		mnVentas.add(mntmVender);
 
 		mntmGenerarReportes = new JMenuItem("Generar reportes");
-		mntmGenerarReportes.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm5.png")));
+		mntmGenerarReportes.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmGenerarReportes.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/reporte.png")));
 		mntmGenerarReportes.addActionListener(this);
 		mnVentas.add(mntmGenerarReportes);
 
 		mnConfiguracion = new JMenu("Configuración");
+		mnConfiguracion.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/configuracion.png")));
+		mnConfiguracion.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnConfiguracion);
 
 		mntmConfigurarDescuentos = new JMenuItem("Configurar descuentos");
-		mntmConfigurarDescuentos.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm6.png")));
+		mntmConfigurarDescuentos.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmConfigurarDescuentos.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/descuento.png")));
 		mntmConfigurarDescuentos.addActionListener(this);
 		mnConfiguracion.add(mntmConfigurarDescuentos);
 
 		mntmConfigurarObsequios = new JMenuItem("Configurar obsequios");
-		mntmConfigurarObsequios.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm7.png")));
+		mntmConfigurarObsequios.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmConfigurarObsequios.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/obsequio2.png")));
 		mntmConfigurarObsequios.addActionListener(this);
 		mnConfiguracion.add(mntmConfigurarObsequios);
 
 		mntmConfigurarCantidadOptima = new JMenuItem("Configurar cantidad óptima");
-		mntmConfigurarCantidadOptima.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/fmr8.png")));
+		mntmConfigurarCantidadOptima.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmConfigurarCantidadOptima.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/optima1.png")));
 		mntmConfigurarCantidadOptima.addActionListener(this);
 		mnConfiguracion.add(mntmConfigurarCantidadOptima);
 
 		mntmConfigurarCuotaDiaria = new JMenuItem("Configurar cuota diaria");
-		mntmConfigurarCuotaDiaria.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm9.png")));
+		mntmConfigurarCuotaDiaria.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmConfigurarCuotaDiaria.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/cuota.png")));
 		mntmConfigurarCuotaDiaria.addActionListener(this);
 		mnConfiguracion.add(mntmConfigurarCuotaDiaria);
 
 		mnNewMenu = new JMenu("Ayuda");
+		mnNewMenu.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/ayuda.png")));
+		mnNewMenu.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnNewMenu);
 
 		mntmAcercaDeTienda = new JMenuItem("Acerca de tienda");
-		mntmAcercaDeTienda.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/frm10.png")));
+		mntmAcercaDeTienda.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+		mntmAcercaDeTienda.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/tienda2.png")));
 		mntmAcercaDeTienda.addActionListener(this);
 		mnNewMenu.add(mntmAcercaDeTienda);
 		
 		mnSeguimiento = new JMenu("Seguimiento");
+		mnSeguimiento.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/seguimiento.png")));
+		mnSeguimiento.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		menuBar.add(mnSeguimiento);
 		
 		mntmUsuarios = new JMenuItem("Usuarios");
+		mntmUsuarios.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/user1.png")));
+		mntmUsuarios.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		mntmUsuarios.addActionListener(this);
 		mnSeguimiento.add(mntmUsuarios);
 		
 		mntmProductividad = new JMenuItem("Productividad");
+		mntmProductividad.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/productividad1.png")));
+		mntmProductividad.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		mntmProductividad.addActionListener(this);
 		mnSeguimiento.add(mntmProductividad);
 		contentPane = new JPanel();
@@ -369,14 +404,15 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 
 		panel = new JPanel();
-		panel.setBackground(Color.DARK_GRAY);
+		panel.setBackground(SystemColor.textHighlightText);
 		panel.setBounds(0, 0, 884, 535);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
 		lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/cocina5.jpg")));
-		lblNewLabel.setBounds(0, 0, 847, 546);
+		lblNewLabel.setBackground(SystemColor.window);
+		lblNewLabel.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/img/cocinas2.jpg")));
+		lblNewLabel.setBounds(25, -29, 874, 610);
 		panel.add(lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("Coldex");

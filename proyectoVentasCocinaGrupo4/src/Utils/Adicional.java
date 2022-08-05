@@ -113,7 +113,7 @@ public class Adicional {
 	public static void mensajeBienvenido(String msj) {
 
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/bienvenido.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 
 	public static void mensajeInformativo(String msj) {
@@ -143,7 +143,7 @@ public class Adicional {
 	
 	public static void mensajeAcumulador(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/subida.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
+		JOptionPane.showMessageDialog(null, msj, "Avance de ventas", 0, icon);
 	}
 
 

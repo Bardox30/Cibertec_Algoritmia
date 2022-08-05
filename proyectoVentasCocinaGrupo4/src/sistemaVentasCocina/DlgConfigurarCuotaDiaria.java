@@ -2,6 +2,8 @@ package sistemaVentasCocina;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.text.DecimalFormat;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -10,6 +12,7 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -18,6 +21,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.Font;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class DlgConfigurarCuotaDiaria extends JDialog {
 
@@ -49,18 +55,20 @@ public class DlgConfigurarCuotaDiaria extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgConfigurarCuotaDiaria() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarCuotaDiaria.class.getResource("/img/cuota.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		this.setLocationRelativeTo(null);
 		setResizable(false);
 		setTitle("Configurar cuota diaria");
-		setBounds(100, 100, 450, 115);
+		setBounds(100, 100, 458, 138);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 
 		lblCuotaDiaria = new JLabel("Cuota diaria esperada (S/.)");
-		lblCuotaDiaria.setBounds(10, 11, 163, 14);
+		lblCuotaDiaria.setBounds(10, 26, 163, 14);
 		contentPanel.add(lblCuotaDiaria);
 
 		txtCuotaDiariaEsperada = new JTextField();
@@ -73,11 +81,13 @@ public class DlgConfigurarCuotaDiaria extends JDialog {
 				keyTypedTxtCuotaDiariaEsperada(e);
 			}
 		});
-		txtCuotaDiariaEsperada.setBounds(177, 8, 111, 20);
+		txtCuotaDiariaEsperada.setBounds(177, 23, 111, 20);
 		contentPanel.add(txtCuotaDiariaEsperada);
 		txtCuotaDiariaEsperada.setColumns(10);
 
 		btnAceptar = new JButton("Aceptar");
+		btnAceptar.setIcon(new ImageIcon(DlgConfigurarCuotaDiaria.class.getResource("/img/guardar.png")));
+		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		
 
 		btnAceptar.addActionListener(new ActionListener() {
@@ -85,16 +95,18 @@ public class DlgConfigurarCuotaDiaria extends JDialog {
 				actionPerformedBtnAceptar(e);
 			}
 		});
-		btnAceptar.setBounds(335, 8, 89, 23);
+		btnAceptar.setBounds(313, 10, 115, 35);
 		contentPanel.add(btnAceptar);
 
 		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setIcon(new ImageIcon(DlgConfigurarCuotaDiaria.class.getResource("/img/exit2.png")));
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnCancelar(e);
 			}
 		});
-		btnCancelar.setBounds(335, 35, 89, 23);
+		btnCancelar.setBounds(313, 53, 115, 35);
 		contentPanel.add(btnCancelar);
 
 		txtCuotaDiariaEsperada.setText("" + FrmPrincipal.cuotaDiaria);

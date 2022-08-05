@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -19,6 +20,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 
@@ -54,10 +58,12 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgConfigurarObsequio() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarObsequio.class.getResource("/img/obsequio2.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setResizable(false);
 		setTitle("Configurar Obsequios");
-		setBounds(100, 100, 385, 147);
+		setBounds(100, 100, 407, 147);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -87,7 +93,7 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 		contentPanel.add(txtObsequio2);
 		txtObsequio2.setColumns(10);
 
-		lbl6Unidades = new JLabel("6 a mï¿½s unidades");
+		lbl6Unidades = new JLabel("6 a más unidades");
 		lbl6Unidades.setBounds(20, 72, 110, 14);
 		contentPanel.add(lbl6Unidades);
 
@@ -99,13 +105,17 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 		txtObsequio3.setColumns(10);
 
 		btnAceptar = new JButton("Aceptar");
+		btnAceptar.setIcon(new ImageIcon(DlgConfigurarObsequio.class.getResource("/img/guardar.png")));
+		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnAceptar.addActionListener(this);
-		btnAceptar.setBounds(263, 18, 89, 23);
+		btnAceptar.setBounds(262, 10, 115, 35);
 		contentPanel.add(btnAceptar);
 
 		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setIcon(new ImageIcon(DlgConfigurarObsequio.class.getResource("/img/exit2.png")));
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCancelar.addActionListener(this);
-		btnCancelar.setBounds(263, 43, 89, 23);
+		btnCancelar.setBounds(262, 60, 115, 35);
 		contentPanel.add(btnCancelar);
 		mostrar();
 	}

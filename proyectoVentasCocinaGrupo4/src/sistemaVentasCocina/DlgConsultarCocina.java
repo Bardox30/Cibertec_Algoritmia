@@ -12,6 +12,9 @@ import javax.swing.JTextField;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.Font;
+import javax.swing.ImageIcon;
 
 public class DlgConsultarCocina extends JDialog implements ActionListener {
 
@@ -53,10 +56,12 @@ public class DlgConsultarCocina extends JDialog implements ActionListener {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public DlgConsultarCocina() {
+		setFont(new Font("Dialog", Font.BOLD, 13));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConsultarCocina.class.getResource("/img/consultar1.png")));
 		setModal(true);
 		setForeground(Color.GREEN);
 		setTitle("Consultar cocina");
-		setBounds(100, 100, 506, 217);
+		setBounds(100, 100, 459, 217);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -69,7 +74,7 @@ public class DlgConsultarCocina extends JDialog implements ActionListener {
 		cboModelo = new JComboBox();
 		cboModelo.addActionListener(this);
 		cboModelo.setModel(new DefaultComboBoxModel(new String[] {"Mabe EMP6120PG0", "Indurama Parma", "Sole COSOL027", "Coldex CX602", "Reco Dakota"}));
-		cboModelo.setBounds(96, 20, 137, 22);
+		cboModelo.setBounds(96, 20, 149, 22);
 		contentPanel.add(cboModelo);
 		
 		lblPrecio = new JLabel("Precio (S/)");
@@ -94,37 +99,39 @@ public class DlgConsultarCocina extends JDialog implements ActionListener {
 		
 		txtPrecio = new JTextField();
 		txtPrecio.setEditable(false);
-		txtPrecio.setBounds(96, 46, 137, 20);
+		txtPrecio.setBounds(96, 46, 149, 20);
 		contentPanel.add(txtPrecio);
 		txtPrecio.setColumns(10);
 		
 		txtAncho = new JTextField();
 		txtAncho.setEditable(false);
-		txtAncho.setBounds(96, 71, 137, 20);
+		txtAncho.setBounds(96, 71, 149, 20);
 		contentPanel.add(txtAncho);
 		txtAncho.setColumns(10);
 		
 		txtAlto = new JTextField();
 		txtAlto.setEditable(false);
-		txtAlto.setBounds(96, 96, 137, 20);
+		txtAlto.setBounds(96, 96, 149, 20);
 		contentPanel.add(txtAlto);
 		txtAlto.setColumns(10);
 		
 		txtFondo = new JTextField();
 		txtFondo.setEditable(false);
-		txtFondo.setBounds(96, 121, 137, 20);
+		txtFondo.setBounds(96, 121, 149, 20);
 		contentPanel.add(txtFondo);
 		txtFondo.setColumns(10);
 		
 		txtQuemadores = new JTextField();
 		txtQuemadores.setEditable(false);
-		txtQuemadores.setBounds(96, 146, 137, 20);
+		txtQuemadores.setBounds(96, 146, 149, 20);
 		contentPanel.add(txtQuemadores);
 		txtQuemadores.setColumns(10);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgConsultarCocina.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(376, 20, 89, 23);
+		btnCerrar.setBounds(311, 14, 112, 35);
 		contentPanel.add(btnCerrar);
 		mostrar();
 	}

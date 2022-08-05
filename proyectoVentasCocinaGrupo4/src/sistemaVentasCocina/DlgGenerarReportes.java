@@ -16,6 +16,9 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class DlgGenerarReportes extends JDialog implements ActionListener {
 
@@ -49,6 +52,8 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public DlgGenerarReportes() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgGenerarReportes.class.getResource("/img/reporte.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setTitle("Generar reportes");
 		setBounds(100, 100, 662, 413);
@@ -68,8 +73,10 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		contentPanel.add(cboTipoDeReporte);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgGenerarReportes.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(533, 19, 85, 21);
+		btnCerrar.setBounds(516, 11, 115, 35);
 		contentPanel.add(btnCerrar);
 		
 		scrollPane = new JScrollPane();
@@ -122,35 +129,35 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas0); ///  
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas0);  // ahora si
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido0));
-			imprimir("Aporte a la cuota diaria                 : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
+			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
 			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo1);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas1);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas1);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido1));
-			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
+			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
+			//imprimir("Aporte a la cuota diaria			: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo2);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas2);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas2);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido2));
-			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
+			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
 			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo3);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas3);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas3);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido3));
-			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
+			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
 			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo4);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas4);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas4);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido4));
-			imprimir("Aporte a la cuota diaria   : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
+			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
 			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
 			break;
 		case 1:
@@ -208,9 +215,9 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 			imprimir("Fondo menor		: "+Adicional.df.format(clasificacionPromedialFondos(1))+" cm");
 			imprimir("Fondo mayor		: "+Adicional.df.format(clasificacionPromedialFondos(2))+" cm"+"\n");
 			
-			imprimir("Quemador promedio	: "+Adicional.df.format(clasificacionPromedialQuemadores(0))+" quemadores");
-			imprimir("Quemador menor	: "+Adicional.df.format(clasificacionPromedialQuemadores(1))+" quemadores");
-			imprimir("Quemador mayor	: "+Adicional.df.format(clasificacionPromedialQuemadores(2))+" quemadores");
+			imprimir("Quemador promedio	: "+ (clasificacionPromedialQuemadores(0))+" quemadores");
+			imprimir("Quemador menor	: "+ (clasificacionPromedialQuemadores(1))+" quemadores");
+			imprimir("Quemador mayor	: "+ (clasificacionPromedialQuemadores(2))+" quemadores");
 			break;
 		}
 	}

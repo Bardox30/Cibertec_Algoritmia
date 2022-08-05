@@ -20,6 +20,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.Font;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class DlgConfigurarCantidadOptima extends JDialog {
 
@@ -51,16 +54,18 @@ public class DlgConfigurarCantidadOptima extends JDialog {
 	 * Create the dialog.
 	 */
 	public DlgConfigurarCantidadOptima() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarCantidadOptima.class.getResource("/img/optima1.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setModal(true);
 		setTitle("Configurar cantidad Optima");
-		setBounds(100, 100, 450, 108);
+		setBounds(100, 100, 470, 137);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 
 		lblCantidadOptima = new JLabel("Cantidad Optima de unidades vendidas:");
-		lblCantidadOptima.setBounds(10, 23, 228, 13);
+		lblCantidadOptima.setBounds(10, 23, 234, 13);
 		contentPanel.add(lblCantidadOptima);
 
 		txtCantidadOptima = new JTextField();
@@ -72,26 +77,30 @@ public class DlgConfigurarCantidadOptima extends JDialog {
 				keyTypedTxtCantidadOptima(e);
 			}
 		});
-		txtCantidadOptima.setBounds(246, 20, 51, 19);
+		txtCantidadOptima.setBounds(243, 20, 51, 19);
 		contentPanel.add(txtCantidadOptima);
 		txtCantidadOptima.setColumns(10);
 
 		btnAceptar = new JButton("Aceptar");
+		btnAceptar.setIcon(new ImageIcon(DlgConfigurarCantidadOptima.class.getResource("/img/guardar.png")));
+		btnAceptar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnAceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnAceptar(e);
 			}
 		});
-		btnAceptar.setBounds(330, 10, 85, 21);
+		btnAceptar.setBounds(331, 10, 115, 35);
 		contentPanel.add(btnAceptar);
 
 		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setIcon(new ImageIcon(DlgConfigurarCantidadOptima.class.getResource("/img/exit2.png")));
+		btnCancelar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnCancelar(e);
 			}
 		});
-		btnCancelar.setBounds(330, 33, 85, 21);
+		btnCancelar.setBounds(331, 53, 115, 35);
 		contentPanel.add(btnCancelar);
 		// Mostrar datos de la cantidad Óptima
 		txtCantidadOptima.setText("" + FrmPrincipal.cantidadOptima);
@@ -131,7 +140,14 @@ public class DlgConfigurarCantidadOptima extends JDialog {
 		if (key == 10) {
 			botonAceptar();
 		}
-	}	
+	}
+	
+	
+
+	// ¿esto se llama en algún momento? (el amarillo indica que no, pero no tengo tiempo para revisarlo a fondo. si sirve, averiguen ustedes)
+	private void mensaje(String msj) {
+			JOptionPane.showMessageDialog(this, msj, "Error!!!", 0);
+	}
 
 	protected void actionPerformedBtnCancelar(ActionEvent e) {
 		dispose();

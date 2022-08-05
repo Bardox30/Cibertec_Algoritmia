@@ -4,9 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
 import Utils.Adicional;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -16,10 +19,14 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.logging.Logger;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.SwingConstants;
+import java.awt.Dialog.ModalExclusionType;
+import java.awt.Window.Type;
 import java.awt.Color;
+import javax.swing.UIManager;
 import javax.swing.border.MatteBorder;
 import java.awt.event.MouseMotionAdapter;
 
@@ -76,9 +83,10 @@ public class FrmLogueo extends JFrame {
 		contentPane.setLayout(null);
 
 		lblUsuario = new JLabel("Usuario:");
-		lblUsuario.setForeground(new Color(0, 0, 0));
+		lblUsuario.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/user2.png")));
+		lblUsuario.setForeground(new Color(248, 248, 255));
 		lblUsuario.setFont(new Font("SansSerif", Font.BOLD, 18));
-		lblUsuario.setBounds(116, 53, 112, 21);
+		lblUsuario.setBounds(114, 75, 112, 32);
 		contentPane.add(lblUsuario);
 
 		txtUsuario = new JTextField();
@@ -95,14 +103,15 @@ public class FrmLogueo extends JFrame {
 			}
 		});
 		txtUsuario.setFont(new Font("SansSerif", Font.PLAIN, 13));
-		txtUsuario.setBounds(238, 53, 105, 23);
+		txtUsuario.setBounds(239, 82, 117, 23);
 		contentPane.add(txtUsuario);
 		txtUsuario.setColumns(10);
 
 		lblContrasena = new JLabel("Contrase\u00F1a:");
-		lblContrasena.setForeground(new Color(0, 0, 0));
+		lblContrasena.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/password.png")));
+		lblContrasena.setForeground(new Color(248, 248, 255));
 		lblContrasena.setFont(new Font("SansSerif", Font.BOLD, 18));
-		lblContrasena.setBounds(116, 98, 112, 22);
+		lblContrasena.setBounds(83, 134, 146, 32);
 		contentPane.add(lblContrasena);
 
 		jPasword = new JPasswordField();
@@ -124,21 +133,21 @@ public class FrmLogueo extends JFrame {
 				keyTypedJPasword(e);
 			}
 		});
-		jPasword.setBounds(238, 101, 105, 23);
+		jPasword.setBounds(239, 142, 117, 23);
 		contentPane.add(jPasword);
 
-		btnIngresar = new JButton("Ingresar");
-		btnIngresar.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnIngresar = new JButton("INGRESAR");
+		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				actionPerformedBtnIngresar(e);
 			}
 		});
-		btnIngresar.setBounds(116, 149, 89, 29);
+		btnIngresar.setBounds(98, 203, 117, 29);
 		contentPane.add(btnIngresar);
 
-		btnSalir = new JButton("Salir");
-		btnSalir.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		btnSalir = new JButton("SALIR");
+		btnSalir.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		btnSalir.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -150,7 +159,7 @@ public class FrmLogueo extends JFrame {
 				actionPerformed(e);
 			}
 		});
-		btnSalir.setBounds(248, 149, 89, 29);
+		btnSalir.setBounds(251, 203, 105, 29);
 		contentPane.add(btnSalir);
 		
 		lblVer = new JLabel("");
@@ -162,7 +171,7 @@ public class FrmLogueo extends JFrame {
 		});
 		lblVer.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/ver (1).png")));
 		lblVer.setHorizontalAlignment(SwingConstants.LEFT);
-		lblVer.setBounds(366, 95, 28, 29);
+		lblVer.setBounds(366, 143, 28, 29);
 		contentPane.add(lblVer);
 		
 		lblNover = new JLabel("");
@@ -173,13 +182,13 @@ public class FrmLogueo extends JFrame {
 			}
 		});
 		lblNover.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/nover.png")));
-		lblNover.setBounds(366, 91, 28, 29);
+		lblNover.setBounds(366, 143, 28, 29);
 		contentPane.add(lblNover);
 		
 		lblNewLabel = new JLabel("New label");
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/logeo1.jpg")));
-		lblNewLabel.setBounds(0, -20, 423, 348);
+		lblNewLabel.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/login1.jpeg")));
+		lblNewLabel.setBounds(-203, -125, 775, 577);
 		contentPane.add(lblNewLabel);
 	}
 
@@ -288,6 +297,12 @@ public class FrmLogueo extends JFrame {
 		}
 
 	}
+	
+	///// esto verificar después si sirve o se elimina
+	private void mensaje(String msj) {
+		Adicional.mensaje(msj);
+	}
+	
 
 	private String getClave() {
 		return String.valueOf(jPasword.getPassword());
@@ -299,7 +314,7 @@ public class FrmLogueo extends JFrame {
 	
 	//botón salir
 	protected void mouseClickedBtnSalir(MouseEvent e) {
-		int opcion = Adicional.mensajeConfirmar("¿Desea realmente salir de la aplicación?");
+		int opcion = Adicional.mensajeConfirmar("¿Desea salir de la aplicación?");
 		if (opcion == 0) {
 			dispose();
 		}

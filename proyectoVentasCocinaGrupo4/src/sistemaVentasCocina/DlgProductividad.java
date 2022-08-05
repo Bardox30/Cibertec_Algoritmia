@@ -18,6 +18,8 @@ import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import java.awt.Toolkit;
 
 public class DlgProductividad extends JDialog implements ActionListener {
 
@@ -47,6 +49,8 @@ public class DlgProductividad extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgProductividad() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgProductividad.class.getResource("/img/productividad1.png")));
+		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Productividad");
 		setBounds(100, 100, 508, 514);
 		getContentPane().setLayout(new BorderLayout());

@@ -12,6 +12,9 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
+import java.awt.SystemColor;
+import javax.swing.ImageIcon;
 
 public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 
@@ -48,6 +51,7 @@ public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgAcercaDeTienda() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgAcercaDeTienda.class.getResource("/img/tienda2.png")));
 		setModal(true);
 		setTitle("Acerca de Tienda");
 		setBounds(100, 100, 450, 397);
@@ -108,10 +112,11 @@ public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 		contentPanel.add(lblMarcela);
 		
 		btnNewButton = new JButton("Cerrar");
+		btnNewButton.setIcon(new ImageIcon(DlgAcercaDeTienda.class.getResource("/img/exit2.png")));
 		btnNewButton.addActionListener(this);
-		btnNewButton.setForeground(Color.BLUE);
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnNewButton.setBounds(162, 313, 89, 23);
+		btnNewButton.setForeground(SystemColor.desktop);
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnNewButton.setBounds(162, 312, 115, 35);
 		contentPanel.add(btnNewButton);
 		
 		lblJoel = new JLabel("Joel Ayllon Lara");
