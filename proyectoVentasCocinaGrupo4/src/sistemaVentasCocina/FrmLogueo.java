@@ -4,12 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-
 import Utils.Adicional;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JButton;
@@ -19,14 +16,10 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.logging.Logger;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.SwingConstants;
-import java.awt.Dialog.ModalExclusionType;
-import java.awt.Window.Type;
 import java.awt.Color;
-import javax.swing.UIManager;
 import javax.swing.border.MatteBorder;
 import java.awt.event.MouseMotionAdapter;
 
@@ -297,12 +290,6 @@ public class FrmLogueo extends JFrame {
 		}
 
 	}
-	
-	///// esto verificar después si sirve o se elimina
-	private void mensaje(String msj) {
-		Adicional.mensaje(msj);
-	}
-	
 
 	private String getClave() {
 		return String.valueOf(jPasword.getPassword());
