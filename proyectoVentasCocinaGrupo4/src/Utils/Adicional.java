@@ -3,11 +3,8 @@ package Utils;
 import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import sistemaVentasCocina.DlgModificarCocina;
-import sistemaVentasCocina.DlgVentas;
 import sistemaVentasCocina.FrmPrincipal;
 
 public class Adicional {
@@ -100,7 +97,7 @@ public class Adicional {
 	// NOMBRES DE MÉTODOS DE MENSAJE PARA ALERTAS
 	public static void mensajeAlerta(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/alerta2.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 
@@ -118,12 +115,12 @@ public class Adicional {
 
 	public static void mensajeInformativo(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/alerta3.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 	public static void mensajeLimite(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/parar.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);	
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);	
 	}
 	
 	public static void mensajeConfirmacion(String msj) {
@@ -138,7 +135,7 @@ public class Adicional {
 	
 	public static void mensajeSeguroDeModificar(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/modificar.png");
-		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 	public static void mensajeAcumulador(String msj) {
