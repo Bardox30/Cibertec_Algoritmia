@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
@@ -350,12 +349,7 @@ public class DlgModificarCocina extends JDialog implements ActionListener {
 				FrmPrincipal.quemadores4 = Integer.parseInt(txtQuemadores.getText());
 
 			}
-			
-			
 		}
-		
-				
-
 	}
 
 
