@@ -9,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;

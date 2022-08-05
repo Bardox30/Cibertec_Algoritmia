@@ -131,14 +131,7 @@ public class DlgConfigurarCantidadOptima extends JDialog {
 		if (key == 10) {
 			botonAceptar();
 		}
-	}
-	
-	
-
-	// ¿esto se llama en algún momento? (el amarillo indica que no, pero no tengo tiempo para revisarlo a fondo. si sirve, averiguen ustedes)
-	private void mensaje(String msj) {
-			JOptionPane.showMessageDialog(this, msj, "Error!!!", 0);
-	}
+	}	
 
 	protected void actionPerformedBtnCancelar(ActionEvent e) {
 		dispose();
