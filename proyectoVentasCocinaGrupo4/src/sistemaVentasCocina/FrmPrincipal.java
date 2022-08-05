@@ -44,7 +44,11 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	private JMenuItem mntmConfigurarCantidadOptima;
 	private JMenuItem mntmConfigurarCuotaDiaria;
 	private JMenuItem mntmAcercaDeTienda;
-
+	private JMenuItem mntmCambiarDeUsuario;
+	private JMenu mnSeguimiento;
+	private JMenuItem mntmUsuarios;
+	private JMenuItem mntmProductividad;
+	
 	// VARIABLES GLOBALES PÚBLICAS
 
 	// COCINA 0
@@ -236,11 +240,13 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	
 	
 	//////////////////////////////////////////
-	
-	private JMenuItem mntmCambiarDeUsuario;
-	private JMenu mnSeguimiento;
-	private JMenuItem mntmUsuarios;
-	private JMenuItem mntmProductividad;
+	//DATOS CLIENTES
+	public static String nombres;
+	public static String apellidos;
+	public static String dni;
+	public static String observacion;
+	public static String sexo;
+
 	
 	
 	

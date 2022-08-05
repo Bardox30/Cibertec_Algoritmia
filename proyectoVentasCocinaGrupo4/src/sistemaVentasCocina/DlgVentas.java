@@ -6,6 +6,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import CreatePdf.CreatePdf;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
@@ -45,6 +46,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 
 	DecimalFormat df = new DecimalFormat("0.00");
 	private JScrollPane scrollPane;
+	private JButton btnDescargarPDF;
 
 	/**
 	 * Launch the application.
@@ -68,7 +70,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgVentas.class.getResource("/img/ventas.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Vender");
-		setBounds(100, 100, 450, 334);
+		setBounds(100, 100, 450, 384);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -129,13 +131,22 @@ public class DlgVentas extends JDialog implements ActionListener {
 		contentPanel.add(scrollPane);
 
 		txtS = new JTextArea();
+		txtS.setEditable(false);
 		scrollPane.setViewportView(txtS);
 		// mostrar los datos del modelo 0
 		txtPrecio.setText("" + FrmPrincipal.precio0);
+		
+		btnDescargarPDF = new JButton("Descargar PDF");
+		btnDescargarPDF.addActionListener(this);
+		btnDescargarPDF.setBounds(141, 297, 131, 22);
+		contentPanel.add(btnDescargarPDF);
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnDescargarPDF) {
+			actionPerformedBtnDescargarPDF(e);
+		}
 		if (e.getSource() == btnVender) {
 			actionPerformedBtnVender(e);
 		}
@@ -429,5 +440,12 @@ public class DlgVentas extends JDialog implements ActionListener {
 	// imprimir
 	public void imprimir(String msj) {
 		txtS.append(msj + "\n");
+	}
+	protected void actionPerformedBtnDescargarPDF(ActionEvent e) {
+
+		DlgDatosClientes datos = new DlgDatosClientes();
+		datos.setVisible(true);
+		datos.setLocationRelativeTo(this);
+
 	}
 }

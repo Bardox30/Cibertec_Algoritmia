@@ -144,7 +144,7 @@ public class Adicional {
 
 	// Mensaje de error
 	public static void mensaje(String msj) {
-		JOptionPane.showMessageDialog(null, msj, "Error", 0);
+		JOptionPane.showMessageDialog(null, msj, "Sistema", 0);
 	}
 	
 }
