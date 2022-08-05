@@ -81,7 +81,15 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		}
 	}
 	protected void actionPerformedBtnListarUsuarios(ActionEvent e) {
+		mostrarResultados();
+	}
+
+	private void mostrarResultados() {
 		txtS.setText("");
-		txtS.append("");
+		imprimir("");
+	}
+
+	private void imprimir(String msj) {
+		txtS.append(msj+"\n");		
 	}
 }
