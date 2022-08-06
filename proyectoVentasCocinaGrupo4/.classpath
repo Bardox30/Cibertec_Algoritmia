@@ -6,16 +6,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/debugger-app-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/fontbox-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/itextpdf-5.5.13.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/pdfbox-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/pdfbox-app-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/pdfbox-debugger-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/pdfbox-tools-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/preflight-3.0.0-alpha3 (1).jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/preflight-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/preflight-app-3.0.0-alpha3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Joel/Development/java/NUEVO_ESPACIO_PRUEBA/Cibertec_Algoritmia/proyectoVentasCocinaGrupo4/PDF_librerias/xmpbox-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/debugger-app-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/fontbox-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/itextpdf-5.5.13.2.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/pdfbox-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/pdfbox-app-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/pdfbox-debugger-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/pdfbox-tools-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/preflight-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/preflight-3.0.0-alpha3 (1).jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/preflight-app-3.0.0-alpha3.jar"/>
+	<classpathentry kind="lib" path="PDF_librerias/xmpbox-3.0.0-alpha3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
