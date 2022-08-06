@@ -15,6 +15,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import java.awt.Cursor;
 
 public class DlgUsuarios extends JDialog implements ActionListener {
 
@@ -61,6 +62,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		}
 		
 		btnListarUsuarios = new JButton("Listar usuarios");
+		btnListarUsuarios.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnListarUsuarios.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/listar2.png")));
 		btnListarUsuarios.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnListarUsuarios.addActionListener(this);
@@ -68,6 +70,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		contentPanel.add(btnListarUsuarios);
 		
 		btnCrearNuevoUsuario = new JButton("Crear nuevo usuario");
+		btnCrearNuevoUsuario.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCrearNuevoUsuario.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/createuser.png")));
 		btnCrearNuevoUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCrearNuevoUsuario.addActionListener(this);
@@ -85,6 +88,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		scrollPane.setViewportView(txtS);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnCerrar.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/exit2.png")));
 		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
@@ -112,31 +116,31 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		
 		imprimir("Admnistrador del sistema: "+FrmPrincipal.usuario0+"\n");
 		
-		imprimir("Usuario N°1: "+FrmPrincipal.usuario1);
+		imprimir("Usuario N°1	: "+FrmPrincipal.usuario1);
 		imprimir("Contraseña N°1: "+FrmPrincipal.clave1+"\n");
 		
-		imprimir("Usuario N°2: "+FrmPrincipal.usuario2);
+		imprimir("Usuario N°2	: "+FrmPrincipal.usuario2);
 		imprimir("Contraseña N°2: "+FrmPrincipal.clave2+"\n");
 		
-		imprimir("Usuario N°3: "+FrmPrincipal.usuario3);
+		imprimir("Usuario N°3	: "+FrmPrincipal.usuario3);
 		imprimir("Contraseña N°3: "+FrmPrincipal.clave3+"\n");
 		
-		imprimir("Usuario N°4: "+FrmPrincipal.usuario4);
+		imprimir("Usuario N°4	: "+FrmPrincipal.usuario4);
 		imprimir("Contraseña N°4: "+FrmPrincipal.clave4+"\n");
 		
-		imprimir("Usuario N°5: "+FrmPrincipal.usuario5);
+		imprimir("Usuario N°5	: "+FrmPrincipal.usuario5);
 		imprimir("Contraseña N°5: "+FrmPrincipal.clave5+"\n");
 		
-		imprimir("Usuario N°6: "+FrmPrincipal.usuario6);
+		imprimir("Usuario N°6	: "+FrmPrincipal.usuario6);
 		imprimir("Contraseña N°6: "+FrmPrincipal.clave6+"\n");
 		
-		imprimir("Usuario N°7: "+FrmPrincipal.usuario7);
-		imprimir("Contraseña N7: "+FrmPrincipal.clave7+"\n");
+		imprimir("Usuario N°7	: "+FrmPrincipal.usuario7);
+		imprimir("Contraseña N°7: "+FrmPrincipal.clave7+"\n");
 		
-		imprimir("Usuario N°8: "+FrmPrincipal.usuario8);
+		imprimir("Usuario N°8	: "+FrmPrincipal.usuario8);
 		imprimir("Contraseña N°8: "+FrmPrincipal.clave8+"\n");
 		
-		imprimir("Usuario N°9: "+FrmPrincipal.usuario9);
+		imprimir("Usuario N°9	: "+FrmPrincipal.usuario9);
 		imprimir("Contraseña N°9: "+FrmPrincipal.clave9+"\n");
 	}
 

@@ -17,6 +17,9 @@ import javax.swing.ScrollPaneConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class DlgCrearUsuario extends JDialog implements ActionListener {
 
@@ -54,40 +57,45 @@ public class DlgCrearUsuario extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgCrearUsuario() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgCrearUsuario.class.getResource("/img/client.png")));
 		setTitle("Creación de nuevos usuarios");
-		setBounds(100, 100, 450, 238);
+		setBounds(100, 100, 503, 284);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
 		lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(10, 11, 107, 14);
+		lblUsuario.setBounds(10, 14, 107, 14);
 		contentPanel.add(lblUsuario);
 		
 		lblClave = new JLabel("Clave");
-		lblClave.setBounds(10, 48, 107, 14);
+		lblClave.setBounds(10, 51, 107, 14);
 		contentPanel.add(lblClave);
 		
 		txtUsuario = new JTextField();
-		txtUsuario.setBounds(84, 8, 144, 20);
+		txtUsuario.setBounds(84, 11, 144, 20);
 		contentPanel.add(txtUsuario);
 		txtUsuario.setColumns(10);
 		
 		btnCrearNuevoUsuario = new JButton("Crear nuevo usuario");
+		btnCrearNuevoUsuario.setIcon(new ImageIcon(DlgCrearUsuario.class.getResource("/img/createuser2.png")));
+		btnCrearNuevoUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCrearNuevoUsuario.addActionListener(this);
-		btnCrearNuevoUsuario.setBounds(264, 7, 160, 23);
+		btnCrearNuevoUsuario.setBounds(264, 7, 213, 35);
 		contentPanel.add(btnCrearNuevoUsuario);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgCrearUsuario.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(264, 44, 160, 23);
+		btnCerrar.setBounds(264, 57, 213, 35);
 		contentPanel.add(btnCerrar);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(10, 84, 414, 108);
+		scrollPane.setBounds(10, 114, 467, 108);
 		contentPanel.add(scrollPane);
 		
 		txtS = new JTextArea();
@@ -95,7 +103,7 @@ public class DlgCrearUsuario extends JDialog implements ActionListener {
 		scrollPane.setViewportView(txtS);
 		
 		jPassword = new JPasswordField();
-		jPassword.setBounds(84, 45, 144, 22);
+		jPassword.setBounds(84, 48, 144, 22);
 		contentPanel.add(jPassword);
 	}
 	public void actionPerformed(ActionEvent e) {

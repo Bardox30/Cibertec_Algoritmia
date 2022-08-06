@@ -113,13 +113,13 @@ public class Adicional {
 
 	// NOMBRES DE MÉTODOS DE MENSAJE PARA ALERTAS
 	public static void mensajeAlerta(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/alerta2.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/alerta2.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 
 	public static int mensajeConfirmar( String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/confirma.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/confirma.png");
 		return JOptionPane.showConfirmDialog(null, msj, "Sistema",
 				JOptionPane.YES_NO_OPTION,0,icon);
 	}

@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import CreatePdf.CreatePdf;
+import Utils.Adicional;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -19,6 +20,9 @@ import java.awt.Cursor;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import java.awt.Toolkit;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class DlgDatosClientes extends JDialog implements ActionListener, KeyListener {
 
@@ -37,9 +41,10 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 	private JButton btnCerrar;
 	private JTextField txtDNI;
 	private JLabel lblObservacion;
-	private JTextField txtObservacion;
 	private JLabel lblTelefono;
 	private JTextField txtTelefono;
+	private JTextArea txtSObservacion;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Launch the application.
@@ -61,7 +66,7 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgDatosClientes.class.getResource("/img/client.png")));
 		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		setTitle("Datos de cliente para venta");
-		setBounds(100, 100, 547, 258);
+		setBounds(100, 100, 547, 308);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -122,19 +127,25 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		lblObservacion.setBounds(22, 166, 101, 14);
 		contentPanel.add(lblObservacion);
 		
-		txtObservacion = new JTextField();
-		txtObservacion.setBounds(121, 163, 182, 20);
-		contentPanel.add(txtObservacion);
-		txtObservacion.setColumns(10);
-		
 		lblTelefono = new JLabel("Teléfono");
 		lblTelefono.setBounds(22, 123, 78, 14);
 		contentPanel.add(lblTelefono);
 		
 		txtTelefono = new JTextField();
+		txtTelefono.addKeyListener(this);
 		txtTelefono.setBounds(121, 120, 182, 20);
 		contentPanel.add(txtTelefono);
 		txtTelefono.setColumns(10);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(22, 191, 410, 67);
+		contentPanel.add(scrollPane);
+		
+		txtSObservacion = new JTextArea();
+		txtSObservacion.addKeyListener(this);
+		scrollPane.setViewportView(txtSObservacion);
+		txtSObservacion.setLineWrap(true);
 		
 		
 		///////
@@ -153,17 +164,33 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 			actionPerformedBtnDescargarPDF(e);
 		}
 	}
-	protected void actionPerformedBtnDescargarPDF(ActionEvent e) {
+	protected void actionPerformedBtnDescargarPDF(ActionEvent e) {		
+		
 		FrmPrincipal.nombres=getNombreCliente();
 		FrmPrincipal.apellidos=getApellidoCliente();
 		FrmPrincipal.dni=getDNI();
-		FrmPrincipal.observacion=getObservacion();
+		FrmPrincipal.telefono=getTelefono();
+		FrmPrincipal.observacion=getTxtSObservacion();
 		
-		mostrarDatos();
+		
+		if(FrmPrincipal.nombres.trim().isEmpty() || FrmPrincipal.apellidos.trim().isEmpty() || FrmPrincipal.dni.trim().isEmpty() || FrmPrincipal.observacion.trim().isEmpty() ) {
+			Adicional.mensajeAlerta("Recuerda que no puedes dejar ningún casillero en blanco");
+			txtNombre.setText("");
+			txtApellido.setText("");
+			txtDNI.setText("");
+			txtTelefono.setText("");
+			txtSObservacion.setText("");
+		} else {
+			mostrarDatos();
+		}		
 	}
 	
-	private String getObservacion() {
-		return txtObservacion.getText();
+	private int getTelefono() {
+		return Integer.parseInt(txtTelefono.getText());
+	}
+
+	private String getTxtSObservacion() {
+		return txtSObservacion.getText();
 	}
 
 	private String getDNI() {
@@ -182,7 +209,7 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		String username = FrmPrincipal.usernameSistema;
 		int nVentaPDF=FrmPrincipal.numVentaPDF+1;
 		String ruta = "C:\\Users\\"+username+"\\Documents\\Monto-Total-N"+nVentaPDF+".pdf";
-		String mensaje = "Su proforma ha sido exportada exitosamente.\nLa ruta en la que se encuentra guardado el archivo es la siguiente: "+ruta;
+		String mensaje = "Su proforma ha sido exportada exitosamente.\nLa ruta en la que se encuentra guardado el archivo es la siguiente:\n	"+ruta;
 		JOptionPane.showMessageDialog(this, mensaje, "Sistema",0);
 		
 		CreatePdf.main_PDF();
@@ -191,7 +218,8 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		txtNombre.setText("");
 		txtApellido.setText("");
 		txtDNI.setText("");
-		txtObservacion.setText("");
+		txtTelefono.setText("");
+		txtSObservacion.setText("");
 		txtNombre.requestFocus();
 	}
 	protected void actionPerformedBtnSalir(ActionEvent e) {
@@ -202,6 +230,12 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 	public void keyReleased(KeyEvent e) {
 	}
 	public void keyTyped(KeyEvent e) {
+		if (e.getSource() == txtSObservacion) {
+			keyTypedTxtSObservacion(e);
+		}
+		if (e.getSource() == txtTelefono) {
+			keyTypedTxtTelefono(e);
+		}
 		if (e.getSource() == txtApellido) {
 			keyTypedTxtApellido(e);
 		}
@@ -212,18 +246,25 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 			keyTypedTxtDNI(e);
 		}
 	}
+
 	protected void keyTypedTxtDNI(KeyEvent e) {
-		// evitar que se pongan carácteres y solo acepte números
 		int key = e.getKeyChar();
 		boolean numeros = key>=48 && key <=57;
 		if(!numeros) {
 			e.consume();
 		}
+		if(txtTelefono.getText().length() >= 8)	{
+			e.consume();
+		}
 	}
+	
 	protected void keyTypedTxtNombre(KeyEvent e) {
 		int key = e.getKeyChar();
 		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90) || (key==32);
 		if (!numeros) {
+			e.consume();
+		}
+		if(txtNombre.getText().length() >= 40)	{
 			e.consume();
 		}
 	}
@@ -231,6 +272,25 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		int key = e.getKeyChar();
 		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90);
 		if (!numeros) {
+			e.consume();
+		}
+		if(txtApellido.getText().length() >= 40)	{
+			e.consume();
+		}
+	}
+	
+	protected void keyTypedTxtTelefono(KeyEvent e) {
+		int key = e.getKeyChar();
+		boolean numeros = key>=48 && key <=57;
+		if(!numeros) {
+			e.consume();
+		}
+		if(txtTelefono.getText().length() >= 9)	{
+			e.consume();
+		}
+	}
+	protected void keyTypedTxtSObservacion(KeyEvent e) {
+		if(txtSObservacion.getText().length() >= 500)	{
 			e.consume();
 		}
 	}

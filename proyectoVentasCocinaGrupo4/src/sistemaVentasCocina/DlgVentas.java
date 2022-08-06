@@ -239,14 +239,56 @@ public class DlgVentas extends JDialog implements ActionListener {
 			// obsequio
 			obs = getObs();
 
-			// Exportar datos para contabilidad
-			exportarDatos();
-
-			// mostrar datos
-			imprimirDatos();
-			// Numero de ventas
-			numeroVentas();
+			
+			
+			switch(modelo) {
+			case 0:
+				if(cant>FrmPrincipal.stockModelo0) {
+					Adicional.mensaje("No hay stock en "+FrmPrincipal.modelo0);					
+				} else {
+					stockDisponible();
+				}
+				break;
+			case 1:
+				if(cant>FrmPrincipal.stockModelo1) {
+					Adicional.mensaje("No hay stock en "+FrmPrincipal.modelo1);					
+				} else {
+					stockDisponible();
+				}
+				break;
+			case 2:
+				if(cant>FrmPrincipal.stockModelo2) {
+					Adicional.mensaje("No hay stock en "+FrmPrincipal.modelo2);					
+				} else {
+					stockDisponible();
+				}
+				break;
+			case 3:
+				if(cant>FrmPrincipal.stockModelo3) {
+					Adicional.mensaje("No hay stock en "+FrmPrincipal.modelo3);					
+				} else {
+					stockDisponible();
+				}
+				break;
+			default:
+				if(cant>FrmPrincipal.stockModelo4) {
+					Adicional.mensaje("No hay stock en "+FrmPrincipal.modelo4);
+				} else {
+					stockDisponible();					
+				}
+				break;
+			}		
 		}
+	}
+
+	private void stockDisponible() {
+		// Exportar datos para contabilidad
+		exportarDatos();
+
+		// mostrar datos
+		imprimirDatos();
+		// Numero de ventas
+		numeroVentas();
 	}
 
 	private void exportarDatos() {

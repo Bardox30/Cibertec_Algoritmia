@@ -22,6 +22,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
 import java.awt.event.MouseMotionAdapter;
+import java.awt.Cursor;
 
 public class FrmLogueo extends JFrame {
 
@@ -131,6 +132,7 @@ public class FrmLogueo extends JFrame {
 		contentPane.add(jPassword);
 
 		btnIngresar = new JButton("INGRESAR");
+		btnIngresar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnIngresar.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		btnIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -141,16 +143,12 @@ public class FrmLogueo extends JFrame {
 		contentPane.add(btnIngresar);
 
 		btnSalir = new JButton("SALIR");
+		btnSalir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnSalir.setFont(new Font("Segoe UI", Font.BOLD, 15));
 		btnSalir.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				mouseClickedBtnSalir(e);
-			}
-		});
-		btnSalir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				actionPerformed(e);
 			}
 		});
 		btnSalir.setBounds(251, 203, 105, 29);

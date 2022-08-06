@@ -232,11 +232,11 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		
 		
 		if(cantUniVendidas>FrmPrincipal.cantidadOptima)
-			return cantUniVendidas+"("+dif+" más que la cantidad óptima)";
+			return cantUniVendidas+" ("+dif+" más que la cantidad óptima)";
 		else if(cantUniVendidas<FrmPrincipal.cantidadOptima)
-			return cantUniVendidas+"("+dif+" menos que la cantidad óptima)";
+			return cantUniVendidas+" ("+dif+" menos que la cantidad óptima)";
 		else
-			return FrmPrincipal.cantidadOptima+"(igual a la cantidad óptima)";
+			return FrmPrincipal.cantidadOptima+" (igual a la cantidad óptima)";
 	}		
 	protected void actionPerformedBtnCerrar(ActionEvent e) {
 		dispose();
@@ -248,11 +248,11 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 		promedio=(FrmPrincipal.precio0+FrmPrincipal.precio1+FrmPrincipal.precio2+FrmPrincipal.precio3+FrmPrincipal.precio4)/5;
 		
 		if(precio>promedio)
-			return "(Mayor al promedio)";
+			return " (Mayor al promedio)";
 		else if(precio<promedio)
-			return "(Menor al promedio)";
+			return " (Menor al promedio)";
 		else
-			return "(Igual al promedio)";
+			return " (Igual al promedio)";
 	}
 	
 	

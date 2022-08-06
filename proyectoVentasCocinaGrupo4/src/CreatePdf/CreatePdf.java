@@ -29,6 +29,7 @@ public class CreatePdf
 			doc.add(new Paragraph("DATOS DE CLIENTE\n\n"));
 			doc.add(new Paragraph("Nombres y apellidos: "+FrmPrincipal.nombres+" "+FrmPrincipal.apellidos+"\n"));
 			doc.add(new Paragraph("DNI: "+FrmPrincipal.dni+"\n"));
+			doc.add(new Paragraph("Teléfono: "+FrmPrincipal.telefono+"\n"));
 			
 			doc.add(new Paragraph("Modelo escogido		: "+FrmPrincipal.modeloCliente+"\n"));
 			doc.add(new Paragraph("Cantidad de venta actual	: "+FrmPrincipal.cantVentaCliente+"\n"));
