@@ -65,7 +65,7 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		
 		cboProcesos = new JComboBox<String>();
 		cboProcesos.addActionListener(this);
-		cboProcesos.setModel(new DefaultComboBoxModel<String>(new String[] {"Inventario de ventas", "Gráfico de estadísticas", "Stock"}));
+		cboProcesos.setModel(new DefaultComboBoxModel(new String[] {"Inventario de ventas", "Stock"}));
 		cboProcesos.setBounds(107, 7, 194, 22);
 		contentPanel.add(cboProcesos);
 		
@@ -78,6 +78,8 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		txtS = new JTextArea();
 		txtS.setEditable(false);
 		scrollPane.setViewportView(txtS);
+		
+		mostrarCbo0();
 	}
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == cboProcesos) {
@@ -85,68 +87,84 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		}
 	}
 	protected void actionPerformedCboProcesos(ActionEvent e) {
+		mostrarDatos();
+	}
+
+	private void mostrarDatos() {
 		tipoProceso=cboProcesos.getSelectedIndex();
 		
 		switch(tipoProceso) {
 		case 0:
-			txtS.setText("");
-			imprimir("VENTAS REALIZADAS POR USUARIOS\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario0);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser0));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser0);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser0+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario1);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser1));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser1);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser1+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario2);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser2));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser2);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser2+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario3);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser3));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser3);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser3+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario4);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser4));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser4);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser4+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario5);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser5));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser5);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser5+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario6);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser6));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser6);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser6+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario7);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser7));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser7);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser7+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario8);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser8));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser8);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser8+"\n");
-			
-			imprimir("Usuario: "+FrmPrincipal.usuario9);
-			imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser9));
-			imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser9);
-			imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser9+"\n");
+			mostrarCbo0();
 			break;
-		case 1:
+		default:
 			txtS.setText("");
-			imprimir("FALTA RELLENAR");
+			mostrarCbo1();
 			break;
-		}		
+		}
+	}
+
+	private void mostrarCbo1() {
+		txtS.setText("STOCK DE TODOS LOS PRODUCTOS DISPONIBLES\n\n");
+		imprimir("Unidades de "+FrmPrincipal.modelo0+": "+FrmPrincipal.stockModelo0);
+		imprimir("Unidades de "+FrmPrincipal.modelo1+": "+FrmPrincipal.stockModelo1);
+		imprimir("Unidades de "+FrmPrincipal.modelo2+": "+FrmPrincipal.stockModelo2);
+		imprimir("Unidades de "+FrmPrincipal.modelo3+": "+FrmPrincipal.stockModelo3);
+		imprimir("Unidades de "+FrmPrincipal.modelo4+": "+FrmPrincipal.stockModelo4);
+	}
+
+	private void mostrarCbo0() {
+		imprimir("VENTAS REALIZADAS POR USUARIOS\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario0);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser0));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser0);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser0+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario1);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser1));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser1);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser1+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario2);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser2));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser2);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser2+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario3);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser3));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser3);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser3+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario4);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser4));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser4);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser4+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario5);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser5));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser5);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser5+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario6);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser6));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser6);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser6+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario7);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser7));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser7);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser7+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario8);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser8));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser8);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser8+"\n");
+		
+		imprimir("Usuario: "+FrmPrincipal.usuario9);
+		imprimir("Monto vendido: S/. "+Adicional.df.format(FrmPrincipal.montoRecaudoUser9));
+		imprimir("Cantidad de ventas realizadas: "+FrmPrincipal.cantVentasUser9);
+		imprimir("Cantidad de productos vendidos: "+FrmPrincipal.produVendiUser9+"\n");
 	}
 
 	private void imprimir(String msj) {

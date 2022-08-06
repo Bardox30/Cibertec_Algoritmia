@@ -6,7 +6,6 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import CreatePdf.CreatePdf;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
@@ -15,7 +14,6 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
-import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
@@ -43,8 +41,10 @@ public class DlgVentas extends JDialog implements ActionListener {
 	private int modelo;
 	private int cant;
 	private double precio;
+	
+	private double impComp, impDsct, impPag;
+	private String obs;
 
-	DecimalFormat df = new DecimalFormat("0.00");
 	private JScrollPane scrollPane;
 	private JButton btnDescargarPDF;
 
@@ -194,9 +194,6 @@ public class DlgVentas extends JDialog implements ActionListener {
 	}
 
 	protected void actionPerformedBtnVender(ActionEvent e) {
-		/// DECLARACIÓN DE VARIABLES
-		double impComp, impDsct, impPag;
-		String obs;
 
 		// Obtener el valor seleccionado del cbo
 		modelo = getModelo();
@@ -226,31 +223,31 @@ public class DlgVentas extends JDialog implements ActionListener {
 		if (opcion == 0) { // yes
 			// Proceso de cálculo
 			// importe de compra
-			impComp = getImpComp(cant);
+			impComp = getImpComp();
 
 			// Importe de descuento
-			impDsct = calcImpDsct(impComp);
+			impDsct = calcImpDsct();
 
 			// precio
-			precio = getPrecio(modelo);
+			precio = getPrecio();
 
 			// Importe de pago
-			impPag = getImpPag(impComp, impDsct);
+			impPag = getImpPag();
 
 			// obsequio
-			obs = getObs(cant);
+			obs = getObs();
 
 			// Exportar datos para contabilidad
-			exportarDatos(impPag);
+			exportarDatos();
 
 			// mostrar datos
-			mostrarDatos(precio, impComp, impDsct, impPag, obs);
+			imprimirDatos();
 			// Numero de ventas
 			numeroVentas();
 		}
 	}
 
-	private void exportarDatos(double impPag) {
+	private void exportarDatos() {
 		/// CUAL ES EL USUARIO?
 		int numUser=0;
 		
@@ -282,30 +279,41 @@ public class DlgVentas extends JDialog implements ActionListener {
 		case 0:
 			FrmPrincipal.cantUniVendidas0 += cant;
 			FrmPrincipal.totalImpVendido0 += impPag;
-			FrmPrincipal.cantVentas0++;
+			FrmPrincipal.cantVentas0++;			
+			FrmPrincipal.stockModelo0-=cant;
 			break;
 		case 1:
 			FrmPrincipal.cantUniVendidas1 += cant;
 			FrmPrincipal.totalImpVendido1 += impPag;
 			FrmPrincipal.cantVentas1++;
+			FrmPrincipal.stockModelo1-=cant;
 			break;
 		case 2:
 			FrmPrincipal.cantUniVendidas2 += cant;
 			FrmPrincipal.totalImpVendido2 += impPag;
 			FrmPrincipal.cantVentas2++;
+			FrmPrincipal.stockModelo2-=cant;
 			break;
 		case 3:
 			FrmPrincipal.cantUniVendidas3 += cant;
 			FrmPrincipal.totalImpVendido3 += impPag;
 			FrmPrincipal.cantVentas3++;
+			FrmPrincipal.stockModelo3-=cant;
 			break;
 		default:
 			FrmPrincipal.cantUniVendidas4 += cant;
 			FrmPrincipal.totalImpVendido4 += impPag;
 			FrmPrincipal.cantVentas4++;
+			FrmPrincipal.stockModelo4-=cant;
 			break;
 		}
-
+		
+		/// AQUI SE GUARDARAN DATOS PARA EXPORTAR EL PDF EN DlgDatosClientes
+		FrmPrincipal.montoVentaCliente=impPag;
+		FrmPrincipal.cantVentaCliente=cant;
+		FrmPrincipal.modeloCliente=getStringModelo();
+		FrmPrincipal.obsCliente=getObs();
+		
 	}
 
 	private void numeroVentas() {
@@ -318,7 +326,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 		}
 	}
 
-	private void mostrarDatos(double precio2, double impComp, double impDsct, double impPag, String obs) {
+	private void imprimirDatos() {
 		switch (modelo) {
 		case 0:
 			txtS.setText("BOLETA DE VENTA\n\n");
@@ -374,7 +382,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 
 	}
 
-	private double calcImpDsct(double impComp) {
+	private double calcImpDsct() {
 		if (cant <= 5)
 			return porceReal(FrmPrincipal.porcentaje1) * impComp;
 		else if (cant <= 10)
@@ -385,7 +393,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 			return porceReal(FrmPrincipal.porcentaje4) * impComp;
 	}
 
-	private double getPrecio(int modelo) {
+	private double getPrecio() {
 		switch (modelo) {
 		case 0:
 			return FrmPrincipal.precio0;
@@ -400,7 +408,7 @@ public class DlgVentas extends JDialog implements ActionListener {
 		}
 	}
 
-	private String getObs(int cant) {
+	private String getObs() {
 		if (cant <= 1)
 			return FrmPrincipal.obsequio1;
 		else if (cant <= 5)
@@ -409,11 +417,11 @@ public class DlgVentas extends JDialog implements ActionListener {
 			return FrmPrincipal.obsequio3;
 	}
 
-	private double getImpPag(double impComp, double impDsct) {
+	private double getImpPag() {
 		return impComp - impDsct;
 	}
 
-	private double getImpComp(int cant) {
+	private double getImpComp() {
 		switch (modelo) {
 		case 0:
 			return cant * FrmPrincipal.precio0;
@@ -428,6 +436,21 @@ public class DlgVentas extends JDialog implements ActionListener {
 		}
 	}
 
+	private String getStringModelo() {
+		switch (modelo) {
+		case 0:
+			return FrmPrincipal.modelo0;
+		case 1:
+			return FrmPrincipal.modelo1;
+		case 2:
+			return FrmPrincipal.modelo2;
+		case 3:
+			return FrmPrincipal.modelo3;
+		default:
+			return FrmPrincipal.modelo4;
+		}
+	}
+	
 	private int getModelo() {
 		return cboModelo.getSelectedIndex();
 	}

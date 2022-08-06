@@ -326,6 +326,7 @@ public class FrmLogueo extends JFrame {
 	private void inhabilitarOpciones(){
 		FrmPrincipal.mnConfiguracion.setEnabled(false);
 		FrmPrincipal.mntmModificarCocina.setEnabled(false);
+		FrmPrincipal.mnSeguimiento.setEnabled(false);
 	}
 	
 	//botón salir

@@ -45,7 +45,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	private JMenuItem mntmConfigurarCuotaDiaria;
 	private JMenuItem mntmAcercaDeTienda;
 	private JMenuItem mntmCambiarDeUsuario;
-	private JMenu mnSeguimiento;
+	public static JMenu mnSeguimiento;
 	private JMenuItem mntmUsuarios;
 	private JMenuItem mntmProductividad;
 	
@@ -111,6 +111,13 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	public static double cuotaDiaria = 75000;
 	private JPanel panel;
 	private JLabel lblNewLabel;
+	
+	public static int stockModelo0=100000;
+	public static int stockModelo1=100000;
+	public static int stockModelo2=100000;
+	public static int stockModelo3=100000;
+	public static int stockModelo4=100000;
+	
 	// contador general
 	public static int contVentGeneral;
 	public static double impTotGeneral;
@@ -124,6 +131,8 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 
 	// Número de ventas
 	public static int nVentas = 0;
+
+	/////////
 
 	///////////////////////////////////////////////////////////////////////
 	
@@ -248,8 +257,15 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	public static String dni;
 	public static String observacion;
 	public static String sexo;
-
 	
+	public static String modeloCliente;
+	public static double montoVentaCliente;
+	public static double cantVentaCliente;
+	public static String obsCliente;
+	
+			
+	public static int numVentaPDF=0;
+	public static String usernameSistema = System.getProperty("user.name");
 	
 	
 	/**
