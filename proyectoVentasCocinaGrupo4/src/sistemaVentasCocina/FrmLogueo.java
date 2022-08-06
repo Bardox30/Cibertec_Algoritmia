@@ -51,7 +51,8 @@ public class FrmLogueo extends JFrame {
 					FrmLogueo frame = new FrmLogueo();
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
-					frame.lblNover.setVisible(false);
+					frame.lblVer.setVisible(false);
+					frame.lblNover.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -162,7 +163,7 @@ public class FrmLogueo extends JFrame {
 				mouseClickedLblVer(e);
 			}
 		});
-		lblVer.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/ver (1).png")));
+		lblVer.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/ver8.png")));
 		lblVer.setHorizontalAlignment(SwingConstants.LEFT);
 		lblVer.setBounds(366, 143, 28, 29);
 		contentPane.add(lblVer);
@@ -174,7 +175,7 @@ public class FrmLogueo extends JFrame {
 				mouseClickedLblNover(e);
 			}
 		});
-		lblNover.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/nover.png")));
+		lblNover.setIcon(new ImageIcon(FrmLogueo.class.getResource("/img/nover8.png")));
 		lblNover.setBounds(366, 143, 28, 29);
 		contentPane.add(lblNover);
 		

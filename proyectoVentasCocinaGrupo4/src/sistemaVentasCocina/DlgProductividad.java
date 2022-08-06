@@ -17,6 +17,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.JButton;
 
 public class DlgProductividad extends JDialog implements ActionListener {
 
@@ -32,6 +33,7 @@ public class DlgProductividad extends JDialog implements ActionListener {
 	
 	
 	private int tipoProceso;
+	private JButton btnCerrar;
 
 	/**
 	 * Launch the application.
@@ -65,7 +67,7 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		
 		cboProcesos = new JComboBox<String>();
 		cboProcesos.addActionListener(this);
-		cboProcesos.setModel(new DefaultComboBoxModel(new String[] {"Inventario de ventas", "Stock"}));
+		cboProcesos.setModel(new DefaultComboBoxModel<String>(new String[] {"Inventario de ventas", "Stock"}));
 		cboProcesos.setBounds(107, 7, 194, 22);
 		contentPanel.add(cboProcesos);
 		
@@ -79,9 +81,17 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		txtS.setEditable(false);
 		scrollPane.setViewportView(txtS);
 		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(380, 7, 89, 23);
+		contentPanel.add(btnCerrar);
+		
 		mostrarCbo0();
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(e);
+		}
 		if (e.getSource() == cboProcesos) {
 			actionPerformedCboProcesos(e);
 		}
@@ -169,5 +179,8 @@ public class DlgProductividad extends JDialog implements ActionListener {
 
 	private void imprimir(String msj) {
 		txtS.append(msj+"\n");		
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent e) {
+		dispose();
 	}
 }
