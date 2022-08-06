@@ -233,7 +233,7 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			int key = e.getKeyChar();
-			boolean numeros = (key >= 97 && key <=122 ) || key >= 48 && key <= 57;
+			boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90);
 			if (!numeros) {
 				e.consume();
 			}

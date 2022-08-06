@@ -25,14 +25,17 @@ public class CreatePdf
 			//opens the PDF  
 			doc.open();
 			//adds paragraph to the PDF file 
+			doc.add(new Paragraph("EMPRESA DE VENTAS DE COCINA\n\n\n"));
 			doc.add(new Paragraph("DATOS DE CLIENTE\n\n"));
 			doc.add(new Paragraph("Nombres y apellidos: "+FrmPrincipal.nombres+" "+FrmPrincipal.apellidos+"\n"));
 			doc.add(new Paragraph("DNI: "+FrmPrincipal.dni+"\n"));
 			
-			doc.add(new Paragraph("Monto total de venta actual	: S/."+FrmPrincipal.montoVentaCliente+"\n"));
-			doc.add(new Paragraph("Cantidad de venta actual	: S/."+FrmPrincipal.cantVentaCliente+"\n"));
 			doc.add(new Paragraph("Modelo escogido		: "+FrmPrincipal.modeloCliente+"\n"));
-			doc.add(new Paragraph("Obsequio para el cliente		: S/."+FrmPrincipal.obsCliente+"\n"));
+			doc.add(new Paragraph("Cantidad de venta actual	: "+FrmPrincipal.cantVentaCliente+"\n"));
+			doc.add(new Paragraph("Monto total de venta actual	: S/."+FrmPrincipal.montoVentaCliente+"\n"));			
+			doc.add(new Paragraph("Obsequio para el cliente		: "+FrmPrincipal.obsCliente+"\n\n"));
+			
+			doc.add(new Paragraph("Observación de la venta		: \n"+FrmPrincipal.observacion+"\n"));
 			
 			//close the PDF file  
 			doc.close();  

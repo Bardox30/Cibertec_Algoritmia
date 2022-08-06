@@ -13,8 +13,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import java.awt.Cursor;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.Toolkit;
 
-public class DlgDatosClientes extends JDialog implements ActionListener {
+public class DlgDatosClientes extends JDialog implements ActionListener, KeyListener {
 
 	/**
 	 * 
@@ -25,13 +31,15 @@ public class DlgDatosClientes extends JDialog implements ActionListener {
 	private JLabel lblApellido;
 	private JLabel lblDNI;
 	private JButton btnDescargarPDF;
-	private JButton btnLimpiar;
+	private JButton btnBorrar;
 	private JTextField txtNombre;
 	private JTextField txtApellido;
-	private JButton btnSalir;
+	private JButton btnCerrar;
 	private JTextField txtDNI;
 	private JLabel lblObservacion;
 	private JTextField txtObservacion;
+	private JLabel lblTelefono;
+	private JTextField txtTelefono;
 
 	/**
 	 * Launch the application.
@@ -50,8 +58,10 @@ public class DlgDatosClientes extends JDialog implements ActionListener {
 	 * Create the dialog.
 	 */
 	public DlgDatosClientes() {
-		setTitle("Datos de cliente para proforma");
-		setBounds(100, 100, 519, 191);
+		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgDatosClientes.class.getResource("/img/client.png")));
+		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		setTitle("Datos de cliente para venta");
+		setBounds(100, 100, 547, 258);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -70,43 +80,61 @@ public class DlgDatosClientes extends JDialog implements ActionListener {
 		contentPanel.add(lblDNI);
 		
 		btnDescargarPDF = new JButton("Descargar PDF");
+		btnDescargarPDF.setIcon(new ImageIcon(DlgDatosClientes.class.getResource("/img/pdf.png")));
+		btnDescargarPDF.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnDescargarPDF.addActionListener(this);
-		btnDescargarPDF.setBounds(358, 20, 119, 23);
+		btnDescargarPDF.setBounds(345, 19, 176, 35);
 		contentPanel.add(btnDescargarPDF);
 		
-		btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.addActionListener(this);
-		btnLimpiar.setBounds(358, 66, 119, 23);
-		contentPanel.add(btnLimpiar);
+		btnBorrar = new JButton("Borrar");
+		btnBorrar.setIcon(new ImageIcon(DlgDatosClientes.class.getResource("/img/limpiar.png")));
+		btnBorrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnBorrar.addActionListener(this);
+		btnBorrar.setBounds(345, 65, 176, 35);
+		contentPanel.add(btnBorrar);
 		
 		txtNombre = new JTextField();
+		txtNombre.addKeyListener(this);
 		txtNombre.setBounds(121, 21, 182, 20);
 		contentPanel.add(txtNombre);
 		txtNombre.setColumns(10);
 		
 		txtApellido = new JTextField();
+		txtApellido.addKeyListener(this);
 		txtApellido.setBounds(121, 52, 182, 20);
 		contentPanel.add(txtApellido);
 		txtApellido.setColumns(10);
 		
 		txtDNI = new JTextField();
+		txtDNI.addKeyListener(this);
 		txtDNI.setBounds(121, 83, 182, 20);
 		contentPanel.add(txtDNI);
 		txtDNI.setColumns(10);
 		
-		btnSalir = new JButton("Salir");
-		btnSalir.addActionListener(this);
-		btnSalir.setBounds(358, 117, 119, 23);
-		contentPanel.add(btnSalir);
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgDatosClientes.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(345, 112, 176, 35);
+		contentPanel.add(btnCerrar);
 		
 		lblObservacion = new JLabel("Observación");
-		lblObservacion.setBounds(22, 117, 101, 14);
+		lblObservacion.setBounds(22, 166, 101, 14);
 		contentPanel.add(lblObservacion);
 		
 		txtObservacion = new JTextField();
-		txtObservacion.setBounds(121, 114, 182, 20);
+		txtObservacion.setBounds(121, 163, 182, 20);
 		contentPanel.add(txtObservacion);
 		txtObservacion.setColumns(10);
+		
+		lblTelefono = new JLabel("Teléfono");
+		lblTelefono.setBounds(22, 123, 78, 14);
+		contentPanel.add(lblTelefono);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setBounds(121, 120, 182, 20);
+		contentPanel.add(txtTelefono);
+		txtTelefono.setColumns(10);
 		
 		
 		///////
@@ -115,10 +143,10 @@ public class DlgDatosClientes extends JDialog implements ActionListener {
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnSalir) {
+		if (e.getSource() == btnCerrar) {
 			actionPerformedBtnSalir(e);
 		}
-		if (e.getSource() == btnLimpiar) {
+		if (e.getSource() == btnBorrar) {
 			actionPerformedBtnLimpiar(e);
 		}
 		if (e.getSource() == btnDescargarPDF) {
@@ -168,5 +196,42 @@ public class DlgDatosClientes extends JDialog implements ActionListener {
 	}
 	protected void actionPerformedBtnSalir(ActionEvent e) {
 		dispose();
+	}
+	public void keyPressed(KeyEvent e) {
+	}
+	public void keyReleased(KeyEvent e) {
+	}
+	public void keyTyped(KeyEvent e) {
+		if (e.getSource() == txtApellido) {
+			keyTypedTxtApellido(e);
+		}
+		if (e.getSource() == txtNombre) {
+			keyTypedTxtNombre(e);
+		}
+		if (e.getSource() == txtDNI) {
+			keyTypedTxtDNI(e);
+		}
+	}
+	protected void keyTypedTxtDNI(KeyEvent e) {
+		// evitar que se pongan carácteres y solo acepte números
+		int key = e.getKeyChar();
+		boolean numeros = key>=48 && key <=57;
+		if(!numeros) {
+			e.consume();
+		}
+	}
+	protected void keyTypedTxtNombre(KeyEvent e) {
+		int key = e.getKeyChar();
+		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90) || (key==32);
+		if (!numeros) {
+			e.consume();
+		}
+	}
+	protected void keyTypedTxtApellido(KeyEvent e) {
+		int key = e.getKeyChar();
+		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90);
+		if (!numeros) {
+			e.consume();
+		}
 	}
 }

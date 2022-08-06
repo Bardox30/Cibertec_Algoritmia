@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.SystemColor;
+import java.awt.Cursor;
 
 public class FrmPrincipal extends JFrame implements ActionListener {
 
@@ -260,7 +261,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	
 	public static String modeloCliente;
 	public static double montoVentaCliente;
-	public static double cantVentaCliente;
+	public static int cantVentaCliente;
 	public static String obsCliente;
 	
 			
@@ -293,6 +294,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public FrmPrincipal() {
+		setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		setIconImage(Toolkit.getDefaultToolkit().getImage(FrmPrincipal.class.getResource("/img/tienda3.png")));
 		setFont(new Font("Segoe UI", Font.BOLD, 20));
 		setResizable(false);

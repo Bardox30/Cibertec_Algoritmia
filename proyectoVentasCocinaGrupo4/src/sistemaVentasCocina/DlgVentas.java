@@ -137,8 +137,10 @@ public class DlgVentas extends JDialog implements ActionListener {
 		txtPrecio.setText("" + FrmPrincipal.precio0);
 		
 		btnDescargarPDF = new JButton("Descargar PDF");
+		btnDescargarPDF.setIcon(new ImageIcon(DlgVentas.class.getResource("/img/pdf.png")));
+		btnDescargarPDF.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnDescargarPDF.addActionListener(this);
-		btnDescargarPDF.setBounds(141, 297, 131, 22);
+		btnDescargarPDF.setBounds(125, 297, 182, 40);
 		contentPanel.add(btnDescargarPDF);
 
 	}
