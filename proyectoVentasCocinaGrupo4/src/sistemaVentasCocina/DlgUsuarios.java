@@ -49,7 +49,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgUsuarios.class.getResource("/img/user1.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Usuarios");
-		setBounds(100, 100, 450, 342);
+		setBounds(100, 100, 472, 342);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -61,22 +61,27 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		}
 		
 		btnListarUsuarios = new JButton("Listar usuarios");
+		btnListarUsuarios.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/listar2.png")));
+		btnListarUsuarios.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnListarUsuarios.addActionListener(this);
-		btnListarUsuarios.setBounds(74, 7, 140, 23);
+		btnListarUsuarios.setBounds(74, 7, 156, 35);
 		contentPanel.add(btnListarUsuarios);
 		
 		btnCrearNuevoUsuario = new JButton("Crear nuevo usuario");
+		btnCrearNuevoUsuario.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/createuser.png")));
+		btnCrearNuevoUsuario.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCrearNuevoUsuario.addActionListener(this);
-		btnCrearNuevoUsuario.setBounds(240, 7, 164, 23);
+		btnCrearNuevoUsuario.setBounds(240, 7, 194, 35);
 		contentPanel.add(btnCrearNuevoUsuario);
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(10, 48, 414, 202);
+		scrollPane.setBounds(10, 48, 424, 202);
 		contentPanel.add(scrollPane);
 		
 		txtS = new JTextArea();
+		txtS.setEditable(false);
 		scrollPane.setViewportView(txtS);
 		
 		btnCerrar = new JButton("Cerrar");

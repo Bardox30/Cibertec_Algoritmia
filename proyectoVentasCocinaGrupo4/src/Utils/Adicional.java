@@ -126,37 +126,37 @@ public class Adicional {
 	
 	public static void mensajeBienvenido(String msj) {
 
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/bienvenido.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/bienvenido.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 
 	public static void mensajeInformativo(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/alerta3.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/alerta3.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 	public static void mensajeLimite(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/parar.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/parar.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);	
 	}
 	
 	public static void mensajeConfirmacion(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/confirma.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/confirma.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 	public static void mensajeFaltaCompletar(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/falta.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/falta.png");
 		JOptionPane.showMessageDialog(null, msj, "Error", 0, icon);
 	}
 	
 	public static void mensajeSeguroDeModificar(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/modificar.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/modificar.png");
 		JOptionPane.showMessageDialog(null, msj, "Sistema", 0, icon);
 	}
 	
 	public static void mensajeAcumulador(String msj) {
-		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4-MODULAR/src/img/subida.png");
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/subida.png");
 		JOptionPane.showMessageDialog(null, msj, "Avance de ventas", 0, icon);
 	}
 
