@@ -51,7 +51,6 @@ public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 	 */
 	public DlgAcercaDeTienda() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgAcercaDeTienda.class.getResource("/img/tienda2.png")));
-		setModal(true);
 		setTitle("Acerca de Tienda");
 		setBounds(100, 100, 450, 397);
 		getContentPane().setLayout(new BorderLayout());

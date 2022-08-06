@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 
 public class DlgUsuarios extends JDialog implements ActionListener {
 
@@ -26,6 +27,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 	private JButton btnCrearNuevoUsuario;
 	private JTextArea txtS;
 	private JScrollPane scrollPane;
+	private JButton btnCerrar;
 
 	/**
 	 * Launch the application.
@@ -47,7 +49,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgUsuarios.class.getResource("/img/user1.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
 		setTitle("Usuarios");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 342);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -76,8 +78,18 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		
 		txtS = new JTextArea();
 		scrollPane.setViewportView(txtS);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgUsuarios.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(159, 261, 108, 35);
+		contentPanel.add(btnCerrar);
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnCerrar) {
+			actionPerformedBtnSalir(e);
+		}
 		if (e.getSource() == btnCrearNuevoUsuario) {
 			actionPerformedBtnCrearNuevoUsuario(e);
 		}
@@ -134,5 +146,8 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 		} else {
 			JOptionPane.showMessageDialog(null, "No es posible crear más usuarios, alcanzaste el límite máximo.", "Sistema", 0);
 		}
+	}
+	protected void actionPerformedBtnSalir(ActionEvent e) {
+		dispose();
 	}
 }

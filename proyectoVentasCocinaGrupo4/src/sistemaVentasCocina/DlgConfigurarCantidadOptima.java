@@ -56,7 +56,6 @@ public class DlgConfigurarCantidadOptima extends JDialog {
 	public DlgConfigurarCantidadOptima() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarCantidadOptima.class.getResource("/img/optima1.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setTitle("Configurar cantidad Optima");
 		setBounds(100, 100, 470, 137);
 		getContentPane().setLayout(new BorderLayout());

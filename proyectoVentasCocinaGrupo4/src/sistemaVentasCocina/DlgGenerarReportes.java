@@ -54,7 +54,6 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 	public DlgGenerarReportes() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgGenerarReportes.class.getResource("/img/reporte.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setTitle("Generar reportes");
 		setBounds(100, 100, 662, 413);
 		getContentPane().setLayout(new BorderLayout());

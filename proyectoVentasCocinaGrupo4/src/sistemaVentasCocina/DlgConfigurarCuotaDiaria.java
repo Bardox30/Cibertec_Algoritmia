@@ -54,7 +54,6 @@ public class DlgConfigurarCuotaDiaria extends JDialog {
 	public DlgConfigurarCuotaDiaria() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarCuotaDiaria.class.getResource("/img/cuota.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		this.setLocationRelativeTo(null);
 		setResizable(false);
 		setTitle("Configurar cuota diaria");

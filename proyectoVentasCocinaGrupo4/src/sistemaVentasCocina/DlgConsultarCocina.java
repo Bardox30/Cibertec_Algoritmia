@@ -58,7 +58,6 @@ public class DlgConsultarCocina extends JDialog implements ActionListener {
 	public DlgConsultarCocina() {
 		setFont(new Font("Dialog", Font.BOLD, 13));
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConsultarCocina.class.getResource("/img/consultar1.png")));
-		setModal(true);
 		setForeground(Color.GREEN);
 		setTitle("Consultar cocina");
 		setBounds(100, 100, 459, 217);

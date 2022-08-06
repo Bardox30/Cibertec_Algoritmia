@@ -501,7 +501,6 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		con.setVisible(true);
 		// Ubicacion de ventana
 		con.setLocationRelativeTo(this);
-
 	}
 
 	protected void actionPerformedMntmModificarCocina(ActionEvent e) {
@@ -576,6 +575,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		this.dispose();
 		
 		//FALTA CENTRAR LA VENTANA DE LOGUEO
+		log.setLocationRelativeTo(null);
 		/////////////////////////////////////
 	}
 	protected void actionPerformedMntmUsuarios(ActionEvent e) {

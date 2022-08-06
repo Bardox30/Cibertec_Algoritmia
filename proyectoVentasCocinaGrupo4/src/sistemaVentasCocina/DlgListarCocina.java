@@ -49,7 +49,6 @@ public class DlgListarCocina extends JDialog implements ActionListener {
 	public DlgListarCocina() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgListarCocina.class.getResource("/img/listar1.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setTitle("Listado de cocinas");
 		setBounds(100, 100, 503, 495);
 		getContentPane().setLayout(new BorderLayout());

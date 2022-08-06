@@ -58,7 +58,6 @@ public class DlgConfigurarDescuento extends JDialog implements ActionListener {
 	public DlgConfigurarDescuento() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarDescuento.class.getResource("/img/descuento.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setResizable(false);
 		setTitle("Configurar porcentajes de descuento");
 		setBounds(100, 100, 450, 166);

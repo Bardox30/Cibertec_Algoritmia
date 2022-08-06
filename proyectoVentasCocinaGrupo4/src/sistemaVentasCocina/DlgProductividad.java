@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class DlgProductividad extends JDialog implements ActionListener {
 
@@ -82,8 +83,10 @@ public class DlgProductividad extends JDialog implements ActionListener {
 		scrollPane.setViewportView(txtS);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setIcon(new ImageIcon(DlgProductividad.class.getResource("/img/exit2.png")));
+		btnCerrar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(380, 7, 89, 23);
+		btnCerrar.setBounds(354, 6, 104, 35);
 		contentPanel.add(btnCerrar);
 		
 		mostrarCbo0();
@@ -115,6 +118,7 @@ public class DlgProductividad extends JDialog implements ActionListener {
 	}
 
 	private void mostrarCbo1() {
+		txtS.getCaret().setDot(0);
 		txtS.setText("STOCK DE TODOS LOS PRODUCTOS DISPONIBLES\n\n");
 		imprimir("Unidades de "+FrmPrincipal.modelo0+": "+FrmPrincipal.stockModelo0);
 		imprimir("Unidades de "+FrmPrincipal.modelo1+": "+FrmPrincipal.stockModelo1);
@@ -124,6 +128,9 @@ public class DlgProductividad extends JDialog implements ActionListener {
 	}
 
 	private void mostrarCbo0() {
+		txtS.getCaret().setDot(0);  /// hacer aparecer el 'scrollpane' arriba
+		
+		txtS.setText("");
 		imprimir("VENTAS REALIZADAS POR USUARIOS\n");
 		
 		imprimir("Usuario: "+FrmPrincipal.usuario0);

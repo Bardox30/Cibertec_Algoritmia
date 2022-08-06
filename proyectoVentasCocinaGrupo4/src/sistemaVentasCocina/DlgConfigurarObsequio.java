@@ -59,7 +59,6 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 	public DlgConfigurarObsequio() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgConfigurarObsequio.class.getResource("/img/obsequio2.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setResizable(false);
 		setTitle("Configurar Obsequios");
 		setBounds(100, 100, 407, 147);

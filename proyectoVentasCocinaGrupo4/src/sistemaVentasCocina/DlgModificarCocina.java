@@ -62,7 +62,6 @@ public class DlgModificarCocina extends JDialog implements ActionListener {
 	public DlgModificarCocina() {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(DlgModificarCocina.class.getResource("/img/modificar.png")));
 		setFont(new Font("Dialog", Font.BOLD, 13));
-		setModal(true);
 		setForeground(Color.GREEN);
 		setTitle("Modificar cocina");
 		setBounds(100, 100, 471, 217);
