@@ -135,7 +135,6 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 
 	/////////
 
-	///////////////////////////////////////////////////////////////////////
 	
 	/// CANTIDAD DE UNIDADES VENDIDAS, CANTIDAD DE VENTAS REALIZADAS, TOTAL DE IMPORTE VENDIDO, APORTE
 	
@@ -596,9 +595,7 @@ public class FrmPrincipal extends JFrame implements ActionListener {
 		log.setVisible(true);
 		this.dispose();
 		
-		//FALTA CENTRAR LA VENTANA DE LOGUEO
 		log.setLocationRelativeTo(null);
-		/////////////////////////////////////
 	}
 	protected void actionPerformedMntmUsuarios(ActionEvent e) {
 		DlgUsuarios reportes = new DlgUsuarios();

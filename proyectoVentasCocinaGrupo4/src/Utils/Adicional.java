@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 
 import sistemaVentasCocina.FrmPrincipal;
 
-public class Adicional {
-	
+public class Adicional {	
+
 	public static void getUsuario(int numUser, String usuario, String clave) {	
 		switch(numUser) {
 		case 7:
@@ -158,6 +158,11 @@ public class Adicional {
 	public static void mensajeAcumulador(String msj) {
 		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/subida.png");
 		JOptionPane.showMessageDialog(null, msj, "Avance de ventas", 0, icon);
+	}
+	
+	public static void mensajeExportar(String msj) {
+		ImageIcon icon = new ImageIcon("../proyectoVentasCocinaGrupo4/src/img/exportar.png");
+		JOptionPane.showMessageDialog(null, msj, "Exportar Datos", 0, icon);
 	}
 
 

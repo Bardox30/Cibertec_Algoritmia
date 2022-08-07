@@ -10,7 +10,6 @@ import CreatePdf.CreatePdf;
 import Utils.Adicional;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -210,7 +209,7 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		int nVentaPDF=FrmPrincipal.numVentaPDF+1;
 		String ruta = "C:\\Users\\"+username+"\\Documents\\Monto-Total-N"+nVentaPDF+".pdf";
 		String mensaje = "Su proforma ha sido exportada exitosamente.\nLa ruta en la que se encuentra guardado el archivo es la siguiente:\n	"+ruta;
-		JOptionPane.showMessageDialog(this, mensaje, "Sistema",0);
+		Adicional.mensajeExportar(mensaje);
 		
 		CreatePdf.main_PDF();
 	}
