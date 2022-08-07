@@ -127,36 +127,31 @@ public class DlgGenerarReportes extends JDialog implements ActionListener {
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas0); ///  
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas0);  // ahora si
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido0));
-			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
+			imprimir("Aporte a la cuota diaria	: " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria0)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo1);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas1);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas1);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido1));
-			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
-			//imprimir("Aporte a la cuota diaria			: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
+			imprimir("Aporte a la cuota diaria	: " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria1)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo2);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas2);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas2);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido2));
-			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
+			imprimir("Aporte a la cuota diaria	: " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria2)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo3);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas3);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas3);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido3));
-			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
+			imprimir("Aporte a la cuota diaria	: " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria3)+"%\n");
 			
 			imprimir("Modelo		: "+FrmPrincipal.modelo4);
 			imprimir("Cantidad de ventas	: "+FrmPrincipal.cantVentas4);
 			imprimir("Cantidad de unidades vendidas	: "+FrmPrincipal.cantUniVendidas4);
 			imprimir("Importe total vendido	: S/. "+Adicional.df.format(FrmPrincipal.totalImpVendido4));
-			imprimir("Aporte a la cuota diaria               : " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
-			//imprimir("Aporte a la cuota diaria	: "+Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
+			imprimir("Aporte a la cuota diaria	: " + Adicional.df.format(FrmPrincipal.aporteCuotaDiaria4)+"%\n");
 			break;
 		case 1:
 			txtS.setText("VENTAS EN RELACIÓN A LA VENTA ÓPTIMA\n\n");
