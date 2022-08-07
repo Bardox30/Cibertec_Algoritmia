@@ -137,15 +137,12 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 	}
 
 	protected void actionPerformedBtnAceptar(ActionEvent e) {
-		
-		
 
 		String obsequio1, obsequio2, obsequio3;
 
 		obsequio1 = getObsequio1();
 		obsequio2 = getObsequio2();
 		obsequio3 = getObsequio3();
-		
 		
 
 		if (obsequio1.equals("") || obsequio2.equals("") || obsequio3.equals("")) {
@@ -164,7 +161,6 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 				dispose();
 
 			} else {
-
 				FrmPrincipal.obsequio1 = obsequio1;
 				FrmPrincipal.obsequio2 = obsequio2;
 				FrmPrincipal.obsequio3 = obsequio3;
@@ -172,20 +168,15 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 				Adicional.mensajeConfirmacion("Datos guardados correctamente");
 
 				dispose();
-
 			}
-
 		}
-
 	}
 
 	private String getObsequio3() {
-
 		return txtObsequio3.getText().trim();
 	}
 
 	private String getObsequio2() {
-
 		return txtObsequio2.getText().trim();
 	}
 
@@ -233,7 +224,7 @@ public class DlgConfigurarObsequio extends JDialog implements ActionListener {
 		@Override
 		public void keyTyped(KeyEvent e) {
 			int key = e.getKeyChar();
-			boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90);
+			boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90) || (key >= 48 && key <=57);;
 			if (!numeros) {
 				e.consume();
 			}

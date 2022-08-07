@@ -78,7 +78,7 @@ public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 		lblGiomar.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblGiomar.setToolTipText("");
 		lblGiomar.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGiomar.setBounds(10, 111, 414, 33);
+		lblGiomar.setBounds(20, 111, 414, 33);
 		contentPanel.add(lblGiomar);
 		
 		lblJacki = new JLabel("Jackeline Garay Cajo");
@@ -117,10 +117,10 @@ public class DlgAcercaDeTienda extends JDialog implements ActionListener {
 		btnNewButton.setBounds(162, 312, 115, 35);
 		contentPanel.add(btnNewButton);
 		
-		lblJoel = new JLabel("Joel Ayllon Lara");
+		lblJoel = new JLabel("Joel Ayllón Lara");
 		lblJoel.setToolTipText("");
 		lblJoel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblJoel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblJoel.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblJoel.setBounds(10, 269, 414, 33);
 		contentPanel.add(lblJoel);
 	}

@@ -106,12 +106,13 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 			actionPerformedBtnListarUsuarios(e);
 		}
 	}
-	protected void actionPerformedBtnListarUsuarios(ActionEvent e) {
+	protected void actionPerformedBtnListarUsuarios(ActionEvent e) {		
 		mostrarResultados();
 	}
 
 	private void mostrarResultados() {
-		txtS.setText("");
+		txtS.setText("");		
+		
 		imprimir("DATOS DE TODOS LOS USUARIOS\n");
 		
 		imprimir("Admnistrador del sistema: "+FrmPrincipal.usuario0+"\n");
@@ -145,6 +146,7 @@ public class DlgUsuarios extends JDialog implements ActionListener {
 	}
 
 	private void imprimir(String msj) {
+		txtS.getCaret().setDot(0);
 		txtS.append(msj+"\n");		
 	}
 	protected void actionPerformedBtnCrearNuevoUsuario(ActionEvent e) {
