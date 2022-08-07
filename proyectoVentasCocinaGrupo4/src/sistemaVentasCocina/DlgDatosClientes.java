@@ -246,17 +246,6 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 			keyTypedTxtDNI(e);
 		}
 	}
-
-	protected void keyTypedTxtDNI(KeyEvent e) {
-		int key = e.getKeyChar();
-		boolean numeros = key>=48 && key <=57;
-		if(!numeros) {
-			e.consume();
-		}
-		if(txtTelefono.getText().length() >= 8)	{
-			e.consume();
-		}
-	}
 	
 	protected void keyTypedTxtNombre(KeyEvent e) {
 		int key = e.getKeyChar();
@@ -270,7 +259,7 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 	}
 	protected void keyTypedTxtApellido(KeyEvent e) {
 		int key = e.getKeyChar();
-		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90);
+		boolean numeros = (key >= 97 && key <=122 ) || (key >= 65 && key <=90) || (key==32);
 		if (!numeros) {
 			e.consume();
 		}
@@ -289,6 +278,18 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 			e.consume();
 		}
 	}
+	
+	protected void keyTypedTxtDNI(KeyEvent e) {
+		int key = e.getKeyChar();
+		boolean numeros = key>=48 && key <=57;
+		if(!numeros) {
+			e.consume();
+		}
+		if(txtTelefono.getText().length() >= 8)	{
+			e.consume();
+		}
+	}
+	
 	protected void keyTypedTxtSObservacion(KeyEvent e) {
 		if(txtSObservacion.getText().length() >= 500)	{
 			e.consume();
