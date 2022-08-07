@@ -285,7 +285,7 @@ public class DlgDatosClientes extends JDialog implements ActionListener, KeyList
 		if(!numeros) {
 			e.consume();
 		}
-		if(txtTelefono.getText().length() >= 8)	{
+		if(txtDNI.getText().length() >= 8)	{
 			e.consume();
 		}
 	}
